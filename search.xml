@@ -2,8 +2,14 @@
 <search>
   <entry>
     <title><![CDATA[test2]]></title>
-    <url>%2F2017%2F10%2F01%2Ftest2-1%2F</url>
-    <content type="text"></content>
+    <url>%2F2017%2F10%2F01%2Fst2-1%2F</url>
+    <content type="text"><![CDATA[en hello this is a test!]]></content>
+      <categories>
+        <category>test</category>
+      </categories>
+      <tags>
+        <tag>test</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[test2]]></title>

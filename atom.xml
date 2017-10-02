@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://eleztian.github.io/"/>
-  <updated>2017-10-01T15:20:19.310Z</updated>
+  <updated>2017-10-02T06:43:44.497Z</updated>
   <id>https://eleztian.github.io/</id>
   
   <author>
@@ -18,15 +18,27 @@
   
   <entry>
     <title>test2</title>
-    <link href="https://eleztian.github.io/2017/10/01/test2-1/"/>
-    <id>https://eleztian.github.io/2017/10/01/test2-1/</id>
-    <published>2017-10-01T15:20:19.000Z</published>
-    <updated>2017-10-01T15:20:19.310Z</updated>
+    <link href="https://eleztian.github.io/2017/10/01/st2-1/"/>
+    <id>https://eleztian.github.io/2017/10/01/st2-1/</id>
+    <published>2017-10-01T15:20:00.000Z</published>
+    <updated>2017-10-02T06:43:44.497Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="en"><a href="#en" class="headerlink" title="en"></a>en</h1><p><img src="/2017/10/01/st2-1/../photo.jpg" alt="ss"></p><p><img src="/2017/10/01/st2-1/photo.jpg" alt="ssss"></p><p>hello this is a test!</p>]]></content>
     
     <summary type="html">
     
+      
+      
+        &lt;h1 id=&quot;en&quot;&gt;&lt;a href=&quot;#en&quot; class=&quot;headerlink&quot; title=&quot;en&quot;&gt;&lt;/a&gt;en&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;/2017/10/01/st2-1/../photo.jpg&quot; alt=&quot;ss&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/
+      
+    
     </summary>
     
+      <category term="test" scheme="https://eleztian.github.io/categories/test/"/>
+    
+    
+      <category term="test" scheme="https://eleztian.github.io/tags/test/"/>
     
   </entry>
   
@@ -35,7 +47,7 @@
     <link href="https://eleztian.github.io/2017/10/01/test2/"/>
     <id>https://eleztian.github.io/2017/10/01/test2/</id>
     <published>2017-10-01T15:13:24.000Z</published>
-    <updated>2017-10-01T15:13:24.212Z</updated>
+    <updated>2017-10-02T06:17:28.571Z</updated>
     
     <summary type="html">
     
