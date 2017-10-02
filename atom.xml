@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://eleztian.github.io/"/>
-  <updated>2017-10-02T06:43:44.497Z</updated>
+  <updated>2017-10-02T06:57:02.145Z</updated>
   <id>https://eleztian.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>photo_test</title>
+    <link href="https://eleztian.github.io/2017/10/02/photo-test/"/>
+    <id>https://eleztian.github.io/2017/10/02/photo-test/</id>
+    <published>2017-10-02T06:48:34.000Z</published>
+    <updated>2017-10-02T06:57:02.145Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/2017/10/02/photo-test/photo_test/1.png" alt="test"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;/2017/10/02/photo-test/photo_test/1.png&quot; alt=&quot;test&quot;&gt;&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>test2</title>
