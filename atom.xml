@@ -5,9 +5,9 @@
   <subtitle>Essay</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://www.eleztian.xyz/"/>
+  <link href="https://www.eleztian.xyz/"/>
   <updated>2017-10-03T03:51:06.071Z</updated>
-  <id>http://www.eleztian.xyz/</id>
+  <id>https://www.eleztian.xyz/</id>
   
   <author>
     <name>Ele Ztian</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Linux 信号机制</title>
-    <link href="http://www.eleztian.xyz/2017/10/Linux-%E4%BF%A1%E5%8F%B7%E6%9C%BA%E5%88%B6/"/>
-    <id>http://www.eleztian.xyz/2017/10/Linux-信号机制/</id>
+    <link href="https://www.eleztian.xyz/2017/10/Linux-%E4%BF%A1%E5%8F%B7%E6%9C%BA%E5%88%B6/"/>
+    <id>https://www.eleztian.xyz/2017/10/Linux-信号机制/</id>
     <published>2017-10-03T03:32:40.000Z</published>
     <updated>2017-10-03T03:51:06.071Z</updated>
     
@@ -35,19 +35,19 @@
     
     </summary>
     
-      <category term="Linux" scheme="http://www.eleztian.xyz/categories/Linux/"/>
+      <category term="Linux" scheme="https://www.eleztian.xyz/categories/Linux/"/>
     
     
-      <category term="Linux" scheme="http://www.eleztian.xyz/tags/Linux/"/>
+      <category term="Linux" scheme="https://www.eleztian.xyz/tags/Linux/"/>
     
-      <category term="c" scheme="http://www.eleztian.xyz/tags/c/"/>
+      <category term="c" scheme="https://www.eleztian.xyz/tags/c/"/>
     
   </entry>
   
   <entry>
     <title>文件 IO</title>
-    <link href="http://www.eleztian.xyz/2017/10/%E6%96%87%E4%BB%B6-IO/"/>
-    <id>http://www.eleztian.xyz/2017/10/文件-IO/</id>
+    <link href="https://www.eleztian.xyz/2017/10/%E6%96%87%E4%BB%B6-IO/"/>
+    <id>https://www.eleztian.xyz/2017/10/文件-IO/</id>
     <published>2017-10-03T03:31:04.000Z</published>
     <updated>2017-10-03T03:51:20.996Z</updated>
     
@@ -68,19 +68,19 @@
     
     </summary>
     
-      <category term="Linux" scheme="http://www.eleztian.xyz/categories/Linux/"/>
+      <category term="Linux" scheme="https://www.eleztian.xyz/categories/Linux/"/>
     
     
-      <category term="Linux" scheme="http://www.eleztian.xyz/tags/Linux/"/>
+      <category term="Linux" scheme="https://www.eleztian.xyz/tags/Linux/"/>
     
-      <category term="c" scheme="http://www.eleztian.xyz/tags/c/"/>
+      <category term="c" scheme="https://www.eleztian.xyz/tags/c/"/>
     
   </entry>
   
   <entry>
     <title>Linux 进程间通信</title>
-    <link href="http://www.eleztian.xyz/2017/10/Linux-%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1/"/>
-    <id>http://www.eleztian.xyz/2017/10/Linux-进程间通信/</id>
+    <link href="https://www.eleztian.xyz/2017/10/Linux-%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1/"/>
+    <id>https://www.eleztian.xyz/2017/10/Linux-进程间通信/</id>
     <published>2017-10-03T03:27:36.000Z</published>
     <updated>2017-10-03T03:50:23.676Z</updated>
     
@@ -105,19 +105,19 @@
     
     </summary>
     
-      <category term="Linux" scheme="http://www.eleztian.xyz/categories/Linux/"/>
+      <category term="Linux" scheme="https://www.eleztian.xyz/categories/Linux/"/>
     
     
-      <category term="Linux" scheme="http://www.eleztian.xyz/tags/Linux/"/>
+      <category term="Linux" scheme="https://www.eleztian.xyz/tags/Linux/"/>
     
-      <category term="c" scheme="http://www.eleztian.xyz/tags/c/"/>
+      <category term="c" scheme="https://www.eleztian.xyz/tags/c/"/>
     
   </entry>
   
   <entry>
     <title>Linux 系统移植步骤</title>
-    <link href="http://www.eleztian.xyz/2017/10/Linux-%E7%B3%BB%E7%BB%9F%E7%A7%BB%E6%A4%8D%E6%AD%A5%E9%AA%A4/"/>
-    <id>http://www.eleztian.xyz/2017/10/Linux-系统移植步骤/</id>
+    <link href="https://www.eleztian.xyz/2017/10/Linux-%E7%B3%BB%E7%BB%9F%E7%A7%BB%E6%A4%8D%E6%AD%A5%E9%AA%A4/"/>
+    <id>https://www.eleztian.xyz/2017/10/Linux-系统移植步骤/</id>
     <published>2017-10-03T03:26:07.000Z</published>
     <updated>2017-10-03T03:50:43.561Z</updated>
     
@@ -132,17 +132,17 @@
     
     </summary>
     
-      <category term="嵌入式" scheme="http://www.eleztian.xyz/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/"/>
+      <category term="嵌入式" scheme="https://www.eleztian.xyz/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/"/>
     
     
-      <category term="Linux" scheme="http://www.eleztian.xyz/tags/Linux/"/>
+      <category term="Linux" scheme="https://www.eleztian.xyz/tags/Linux/"/>
     
   </entry>
   
   <entry>
     <title>Fork and exec </title>
-    <link href="http://www.eleztian.xyz/2017/10/Fork-and-exec/"/>
-    <id>http://www.eleztian.xyz/2017/10/Fork-and-exec/</id>
+    <link href="https://www.eleztian.xyz/2017/10/Fork-and-exec/"/>
+    <id>https://www.eleztian.xyz/2017/10/Fork-and-exec/</id>
     <published>2017-10-03T03:24:37.000Z</published>
     <updated>2017-10-03T03:49:50.545Z</updated>
     
@@ -157,19 +157,19 @@
     
     </summary>
     
-      <category term="Linux" scheme="http://www.eleztian.xyz/categories/Linux/"/>
+      <category term="Linux" scheme="https://www.eleztian.xyz/categories/Linux/"/>
     
     
-      <category term="Linux" scheme="http://www.eleztian.xyz/tags/Linux/"/>
+      <category term="Linux" scheme="https://www.eleztian.xyz/tags/Linux/"/>
     
-      <category term="c" scheme="http://www.eleztian.xyz/tags/c/"/>
+      <category term="c" scheme="https://www.eleztian.xyz/tags/c/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="http://www.eleztian.xyz/2017/10/hello-world/"/>
-    <id>http://www.eleztian.xyz/2017/10/hello-world/</id>
+    <link href="https://www.eleztian.xyz/2017/10/hello-world/"/>
+    <id>https://www.eleztian.xyz/2017/10/hello-world/</id>
     <published>2017-10-01T12:58:35.479Z</published>
     <updated>2017-10-03T03:51:47.073Z</updated>
     
@@ -184,12 +184,12 @@
     
     </summary>
     
-      <category term="Hello" scheme="http://www.eleztian.xyz/categories/Hello/"/>
+      <category term="Hello" scheme="https://www.eleztian.xyz/categories/Hello/"/>
     
     
-      <category term="hello" scheme="http://www.eleztian.xyz/tags/hello/"/>
+      <category term="hello" scheme="https://www.eleztian.xyz/tags/hello/"/>
     
-      <category term="test" scheme="http://www.eleztian.xyz/tags/test/"/>
+      <category term="test" scheme="https://www.eleztian.xyz/tags/test/"/>
     
   </entry>
   
