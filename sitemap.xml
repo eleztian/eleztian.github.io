@@ -3,7 +3,7 @@
 
     <sitemap>
         <loc>https://eleztian.github.io/post-sitemap.xml</loc>
-        <lastmod>2017-10-03T03:37:05.656Z</lastmod>
+        <lastmod>2017-10-03T03:51:47.073Z</lastmod>
     </sitemap>
 
     <sitemap>
@@ -12,8 +12,13 @@
     </sitemap>
 
     <sitemap>
+        <loc>https://eleztian.github.io/category-sitemap.xml</loc>
+        <lastmod>2017-10-03T03:49:24.756Z</lastmod>
+    </sitemap>
+
+    <sitemap>
         <loc>https://eleztian.github.io/tag-sitemap.xml</loc>
-        <lastmod>2017-10-03T02:24:36.001Z</lastmod>
+        <lastmod>2017-10-03T03:49:24.756Z</lastmod>
     </sitemap>
 
 </sitemapindex>

@@ -1,43 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="sitemap.xsl"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://eleztian.github.io</loc>
+        <changefreq>daily</changefreq>
+        <priority>1</priority>
+    </url>
 
     <url>
-        <loc>https://eleztian.github.io/tags/c/</loc>
+        <loc>https://eleztian.github.io/categories/c/</loc>
         <lastmod>2017-10-03T03:49:24.756Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://eleztian.github.io/tags/notes/</loc>
-        <lastmod>2017-10-03T03:49:24.756Z</lastmod>
+        <loc>https://eleztian.github.io/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/</loc>
+        <lastmod>2017-10-03T03:50:43.561Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://eleztian.github.io/tags/Linux/</loc>
+        <loc>https://eleztian.github.io/categories/Linux/</loc>
         <lastmod>2017-10-03T03:51:20.996Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://eleztian.github.io/tags/c/</loc>
-        <lastmod>2017-10-03T03:51:20.996Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://eleztian.github.io/tags/hello/</loc>
-        <lastmod>2017-10-03T03:51:47.073Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://eleztian.github.io/tags/test/</loc>
+        <loc>https://eleztian.github.io/categories/Hello/</loc>
         <lastmod>2017-10-03T03:51:47.073Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
