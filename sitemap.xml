@@ -2,22 +2,22 @@
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <sitemap>
-        <loc>https://eleztian.github.io/post-sitemap.xml</loc>
+        <loc>http://www.eleztian.xyz/post-sitemap.xml</loc>
         <lastmod>2017-10-03T03:51:47.073Z</lastmod>
     </sitemap>
 
     <sitemap>
-        <loc>https://eleztian.github.io/page-sitemap.xml</loc>
+        <loc>http://www.eleztian.xyz/page-sitemap.xml</loc>
         <lastmod>2017-10-01T14:37:07.502Z</lastmod>
     </sitemap>
 
     <sitemap>
-        <loc>https://eleztian.github.io/category-sitemap.xml</loc>
+        <loc>http://www.eleztian.xyz/category-sitemap.xml</loc>
         <lastmod>2017-10-03T03:50:43.561Z</lastmod>
     </sitemap>
 
     <sitemap>
-        <loc>https://eleztian.github.io/tag-sitemap.xml</loc>
+        <loc>http://www.eleztian.xyz/tag-sitemap.xml</loc>
         <lastmod>2017-10-03T03:51:20.996Z</lastmod>
     </sitemap>
 

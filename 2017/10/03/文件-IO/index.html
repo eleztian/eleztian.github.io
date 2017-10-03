@@ -88,18 +88,18 @@
 
 
 
-<meta name="description" content="进程间通信方式   管道(pipe) 系统IPC(消息队列、信号量、共享存储） socket   管道   普通管道：半双工通信方式，数据单向流动且只能在具有亲缘关系（父子进程关系）的进程间使用。 流管道：与普通管道不同的是，它允许双向传送 有名管道：与普通管道不同的是它允许在无亲缘关系的进程间使用。   系统IPC   共享内存：映射一段能被其他进程所访问的内存，这段共享内存由一个进程所创建，">
+<meta name="description" content="文件描述符  类型：一个非负正整数范围：0 ~ OPEN_MAX - 1  OPEN_MAX 现在已经被取消 ulimit -a 查看系统最大打开文件数 ulimit -n 最大数目  修改最大打开文件数  常用惯例：  0 -&amp;gt; 标准输入   (STDIN_FILENO) 1 -&amp;gt; 标准输出   (STDOUT_FILENO) 2 -&amp;gt; 标准错误   (STDERR_FILE">
 <meta name="keywords" content="Linux,c">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux 进程间通信">
-<meta property="og:url" content="https://eleztian.github.io/2017/undefined/Linux-进程间通信/index.html">
+<meta property="og:title" content="文件 IO">
+<meta property="og:url" content="http://www.eleztian.xyz/2017/10/03/文件-IO/index.html">
 <meta property="og:site_name" content="Ele Ztian&#39;s Blog">
-<meta property="og:description" content="进程间通信方式   管道(pipe) 系统IPC(消息队列、信号量、共享存储） socket   管道   普通管道：半双工通信方式，数据单向流动且只能在具有亲缘关系（父子进程关系）的进程间使用。 流管道：与普通管道不同的是，它允许双向传送 有名管道：与普通管道不同的是它允许在无亲缘关系的进程间使用。   系统IPC   共享内存：映射一段能被其他进程所访问的内存，这段共享内存由一个进程所创建，">
+<meta property="og:description" content="文件描述符  类型：一个非负正整数范围：0 ~ OPEN_MAX - 1  OPEN_MAX 现在已经被取消 ulimit -a 查看系统最大打开文件数 ulimit -n 最大数目  修改最大打开文件数  常用惯例：  0 -&amp;gt; 标准输入   (STDIN_FILENO) 1 -&amp;gt; 标准输出   (STDOUT_FILENO) 2 -&amp;gt; 标准错误   (STDERR_FILE">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-03T03:50:23.676Z">
+<meta property="og:updated_time" content="2017-10-03T03:51:20.996Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Linux 进程间通信">
-<meta name="twitter:description" content="进程间通信方式   管道(pipe) 系统IPC(消息队列、信号量、共享存储） socket   管道   普通管道：半双工通信方式，数据单向流动且只能在具有亲缘关系（父子进程关系）的进程间使用。 流管道：与普通管道不同的是，它允许双向传送 有名管道：与普通管道不同的是它允许在无亲缘关系的进程间使用。   系统IPC   共享内存：映射一段能被其他进程所访问的内存，这段共享内存由一个进程所创建，">
+<meta name="twitter:title" content="文件 IO">
+<meta name="twitter:description" content="文件描述符  类型：一个非负正整数范围：0 ~ OPEN_MAX - 1  OPEN_MAX 现在已经被取消 ulimit -a 查看系统最大打开文件数 ulimit -n 最大数目  修改最大打开文件数  常用惯例：  0 -&amp;gt; 标准输入   (STDIN_FILENO) 1 -&amp;gt; 标准输出   (STDOUT_FILENO) 2 -&amp;gt; 标准错误   (STDERR_FILE">
 
 
 
@@ -129,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="https://eleztian.github.io/2017/undefined/Linux-进程间通信/"/>
+  <link rel="canonical" href="http://www.eleztian.xyz/2017/10/03/文件-IO/"/>
 
 
 
 
 
-  <title>Linux 进程间通信 | Ele Ztian's Blog</title>
+  <title>文件 IO | Ele Ztian's Blog</title>
   
 
 
@@ -328,7 +328,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://eleztian.github.io/2017/undefined/Linux-进程间通信/">
+    <link itemprop="mainEntityOfPage" href="http://www.eleztian.xyz/2017/10/03/文件-IO/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Ele Ztian">
@@ -345,7 +345,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">Linux 进程间通信</h2>
+          <h2 class="post-title" itemprop="name headline">文件 IO</h2>
         
 
         <div class="post-meta">
@@ -357,7 +357,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-03T11:27:36+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-03T11:31:04+08:00">
                 2017-10-03
               </time>
             
@@ -411,7 +411,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  631
+                  472
                 </span>
               
 
@@ -449,37 +449,44 @@
 
       
         <blockquote>
-<p>进程间通信方式</p>
+<p>文件描述符</p>
 </blockquote>
+<p>类型：一个非负正整数<br>范围：0 ~ OPEN_MAX - 1</p>
+<ul>
+<li>OPEN_MAX 现在已经被取消</li>
+<li>ulimit -a 查看系统最大打开文件数</li>
+<li>ulimit -n 最大数目  修改最大打开文件数</li>
+</ul>
+<p>常用惯例：</p>
+<ul>
+<li>0 -&gt; 标准输入   (STDIN_FILENO)</li>
+<li>1 -&gt; 标准输出   (STDOUT_FILENO)</li>
+<li>2 -&gt; 标准错误   (STDERR_FILENO)</li>
+</ul>
+<blockquote>
+<p>int open(const char<em> filepath, int oflag, …)<br>  int openat(int fd, const char </em>filepath, int oflag, … )</p>
+</blockquote>
+<p>返回的fd一定是未使用的文件描述符中最小的</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">OFLAG:</div><div class="line">    <span class="comment">/* 有且仅有一个 */</span></div><div class="line">    <span class="meta">#<span class="meta-keyword">define</span> O_RDONLY    0       <span class="comment">/* +1 == FREAD */</span></span></div><div class="line">    <span class="meta">#<span class="meta-keyword">define</span> O_WRONLY    1       <span class="comment">/* +1 == FWRITE */</span></span></div><div class="line">    <span class="meta">#<span class="meta-keyword">define</span> O_RDWR      2       <span class="comment">/* +1 == FREAD|FWRITE */</span></span></div><div class="line">    <span class="meta">#<span class="meta-keyword">define</span> O_EXEC          _FEXECSRCH</span></div><div class="line">    <span class="meta">#<span class="meta-keyword">define</span> O_SEARCH        _FEXECSRCH</span></div><div class="line">    </div><div class="line">    <span class="comment">/* 可选 */</span></div><div class="line">    <span class="meta">#<span class="meta-keyword">define</span> O_APPEND    _FAPPEND</span></div><div class="line">    <span class="meta">#<span class="meta-keyword">define</span> O_CREAT     _FCREAT</span></div><div class="line">    <span class="meta">#<span class="meta-keyword">define</span> O_TRUNC     _FTRUNC <span class="comment">/* 若文件存在，长度截为0 */</span></span></div><div class="line">    <span class="meta">#<span class="meta-keyword">define</span> O_EXCL      _FEXCL</span></div><div class="line">    <span class="meta">#<span class="meta-keyword">define</span> O_SYNC      _FSYNC</span></div><div class="line"></div><div class="line">    <span class="meta">#<span class="meta-keyword">define</span> O_NONBLOCK  _FNONBLOCK</span></div><div class="line">    <span class="meta">#<span class="meta-keyword">define</span> O_NOCTTY    _FNOCTTY</span></div><div class="line">    <span class="meta">#<span class="meta-keyword">define</span> O_BINARY    _FBINARY</span></div><div class="line">    <span class="meta">#<span class="meta-keyword">define</span> O_TEXT      _FTEXT</span></div><div class="line">    <span class="meta">#<span class="meta-keyword">define</span> O_CLOEXEC   _FNOINHERIT</span></div><div class="line">    <span class="meta">#<span class="meta-keyword">define</span> O_DIRECT        _FDIRECT</span></div><div class="line">    <span class="meta">#<span class="meta-keyword">define</span> O_NOFOLLOW      _FNOFOLLOW</span></div><div class="line">    <span class="meta">#<span class="meta-keyword">define</span> O_DSYNC         _FSYNC</span></div><div class="line">    <span class="meta">#<span class="meta-keyword">define</span> O_RSYNC         _FSYNC</span></div><div class="line">    <span class="meta">#<span class="meta-keyword">define</span> O_DIRECTORY     _FDIRECTORY</span></div><div class="line">   </div><div class="line">     <span class="comment">/* O_NDELAY    _FNDELAY    set in include/fcntl.h */</span></div><div class="line">    <span class="comment">/*  O_NDELAY    _FNBIO      set in include/fcntl.h */</span></div></pre></td></tr></table></figure>
+<p>openat 中的fd</p>
 <ol>
-<li>管道(pipe)</li>
-<li>系统IPC(消息队列、信号量、共享存储）</li>
-<li>socket</li>
+<li>filepath 是绝对路径， 忽略fd.</li>
+<li>filepath 是相对路径， fd是相对路径名在文件系统中的开始地址。通过打开目录来获取filepath</li>
+<li>filepath 是相对路径， fd为AT_FDCWD，路径名在当前工作目录中获取。</li>
 </ol>
 <blockquote>
-<p>管道</p>
+<p>int create(const char *filepath, mode_t mode)</p>
 </blockquote>
-<ol>
-<li>普通管道：半双工通信方式，数据单向流动且只能在具有亲缘关系（父子进程关系）的进程间使用。</li>
-<li>流管道：与普通管道不同的是，它允许双向传送</li>
-<li>有名管道：与普通管道不同的是它允许在无亲缘关系的进程间使用。</li>
-</ol>
+<p>等效于 open(filepath, O_WRONLY|O_CREAT|0_TRUNC, mode);</p>
 <blockquote>
-<p>系统IPC</p>
+<p>int close(int fd)   include<unistd.h></unistd.h></p>
 </blockquote>
-<ol>
-<li>共享内存：映射一段能被其他进程所访问的内存，这段共享内存由一个进程所创建，但是多个进程都能访问。<br> <strong><em>共享内存是最快的IPC方式</em></strong>，是针对进程间通信效率低而设计的。往往与其往往与其它通信机制，如信号量结合使用，来达到进程间的同步及互斥。</li>
-<li>消息对列：消息队列是由消息链表，存放在内核中并由消息队列标识符标识。消息队列克服了信号传递信息少、管道只能承载无格式字节流以及缓冲区大小受限等缺点。</li>
-<li>信号量：信号量是一个计数器，可以用来控制多个进程对共享资源的访问。它常作为一种锁机制，防止某进程正在访问共享资源时，其他进程也访问该资源。因此，主要作为进程间以及同一进程内不同线程之间的同步手段。 </li>
-</ol>
+<p>在一个进程结束时，内核自动关闭这个进程打开的所有文件。</p>
 <blockquote>
-<p>SOCKET</p>
+<p>off_t lseek(int fd, off_t offset, int whence)</p>
 </blockquote>
-<p>套解口也是一种进程间通信机制，与其他通信机制不同的是，它可用于不同机器间的进程通信</p>
-<blockquote>
-<p>各种通信方式的比较和优缺点</p>
-</blockquote>
-<p>管道：速度慢，容量有限，只有父子进程能通讯<br>FIFO：任何进程间都能通讯，但速度慢<br>消息队列：容量受到系统限制，且要注意第一次读的时候，要考虑上一次没有读完数据的问题<br>信号量：不能传递复杂消息，只能用来同步<br>共享内存区：能够很容易控制容量，速度快，但要保持同步，比如一个进程在写的时候，另一个进程要注意读写的问题，相当于线程中的线程安全，当然，共享内存区同样可以用作线程间通讯，不过没这个必要，线程间本来就已经共享了同一进程内的一块内存</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">OFFSET:</div><div class="line">    <span class="meta"># <span class="meta-keyword">define</span>    SEEK_SET    0   <span class="comment">/* 距开始 */</span></span></div><div class="line">    <span class="meta"># <span class="meta-keyword">define</span>    SEEK_CUR    1   <span class="comment">/* 距当前 */</span></span></div><div class="line">    <span class="meta"># <span class="meta-keyword">define</span>    SEEK_END    2   <span class="comment">/* 距末尾 */</span></span></div></pre></td></tr></table></figure>
+<p><strong><em> 如果 fd 是管道、FIFO、socket lseek返回-1， 置errorno 为ESPIPE。偏移量有可能为负， 因此在检测lseek是否正确时应该使用 ==-1 来判断而不能使用 &lt;0来判断*</em></strong><br>当lseek超过文件长度时， 对该文件的下一次写将加长该文件，并在文件中构成一个空洞。空洞都被置为0.空洞不要求在磁盘上占用空间（不分配磁盘块）。</p>
 
       
     </div>
@@ -541,8 +548,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/undefined/Linux-系统移植步骤/" rel="next" title="Linux 系统移植步骤">
-                <i class="fa fa-chevron-left"></i> Linux 系统移植步骤
+              <a href="/2017/10/03/Linux-进程间通信/" rel="next" title="Linux 进程间通信">
+                <i class="fa fa-chevron-left"></i> Linux 进程间通信
               </a>
             
           </div>
@@ -551,8 +558,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/undefined/文件-IO/" rel="prev" title="文件 IO">
-                文件 IO <i class="fa fa-chevron-right"></i>
+              <a href="/2017/10/03/Linux-信号机制/" rel="prev" title="Linux 信号机制">
+                Linux 信号机制 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
