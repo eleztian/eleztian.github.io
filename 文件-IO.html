@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT, eleztian" />
+  <meta name="keywords" content="Linux,c," />
 
 
 
@@ -88,17 +88,18 @@
 
 
 
-<meta name="description" content="勤工出巧匠">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Schedule">
-<meta property="og:url" content="https://eleztian.github.io/schedule/index.html">
+<meta name="description" content="文件描述符  类型：一个非负正整数范围：0 ~ OPEN_MAX - 1  OPEN_MAX 现在已经被取消 ulimit -a 查看系统最大打开文件数 ulimit -n 最大数目  修改最大打开文件数  常用惯例：  0 -&amp;gt; 标准输入   (STDIN_FILENO) 1 -&amp;gt; 标准输出   (STDOUT_FILENO) 2 -&amp;gt; 标准错误   (STDERR_FILE">
+<meta name="keywords" content="Linux,c">
+<meta property="og:type" content="article">
+<meta property="og:title" content="文件 IO">
+<meta property="og:url" content="https://eleztian.github.io/文件-IO.html">
 <meta property="og:site_name" content="Ele Ztian&#39;s Blog">
-<meta property="og:description" content="勤工出巧匠">
+<meta property="og:description" content="文件描述符  类型：一个非负正整数范围：0 ~ OPEN_MAX - 1  OPEN_MAX 现在已经被取消 ulimit -a 查看系统最大打开文件数 ulimit -n 最大数目  修改最大打开文件数  常用惯例：  0 -&amp;gt; 标准输入   (STDIN_FILENO) 1 -&amp;gt; 标准输出   (STDOUT_FILENO) 2 -&amp;gt; 标准错误   (STDERR_FILE">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-01T14:11:19.895Z">
+<meta property="og:updated_time" content="2017-10-03T03:31:58.973Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Schedule">
-<meta name="twitter:description" content="勤工出巧匠">
+<meta name="twitter:title" content="文件 IO">
+<meta name="twitter:description" content="文件描述符  类型：一个非负正整数范围：0 ~ OPEN_MAX - 1  OPEN_MAX 现在已经被取消 ulimit -a 查看系统最大打开文件数 ulimit -n 最大数目  修改最大打开文件数  常用惯例：  0 -&amp;gt; 标准输入   (STDIN_FILENO) 1 -&amp;gt; 标准输出   (STDOUT_FILENO) 2 -&amp;gt; 标准错误   (STDERR_FILE">
 
 
 
@@ -128,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="https://eleztian.github.io/schedule/"/>
+  <link rel="canonical" href="https://eleztian.github.io/文件-IO.html"/>
 
 
 
 
 
-  <title>Schedule | Ele Ztian's Blog</title>
+  <title>文件 IO | Ele Ztian's Blog</title>
   
 
 
@@ -313,33 +314,274 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://eleztian.github.io/文件-IO.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Ele Ztian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/photo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ele Ztian's Blog">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h2 class="post-title" itemprop="name headline">Schedule</h2>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
+          <h2 class="post-title" itemprop="name headline">文件 IO</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-03T11:31:04+08:00">
+                2017-10-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-      </div>
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  472
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <blockquote>
+<p>文件描述符</p>
+</blockquote>
+<p>类型：一个非负正整数<br>范围：0 ~ OPEN_MAX - 1</p>
+<ul>
+<li>OPEN_MAX 现在已经被取消</li>
+<li>ulimit -a 查看系统最大打开文件数</li>
+<li>ulimit -n 最大数目  修改最大打开文件数</li>
+</ul>
+<p>常用惯例：</p>
+<ul>
+<li>0 -&gt; 标准输入   (STDIN_FILENO)</li>
+<li>1 -&gt; 标准输出   (STDOUT_FILENO)</li>
+<li>2 -&gt; 标准错误   (STDERR_FILENO)</li>
+</ul>
+<blockquote>
+<p>int open(const char<em> filepath, int oflag, …)<br>  int openat(int fd, const char </em>filepath, int oflag, … )</p>
+</blockquote>
+<p>返回的fd一定是未使用的文件描述符中最小的</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">OFLAG:</div><div class="line">    <span class="comment">/* 有且仅有一个 */</span></div><div class="line">    <span class="meta">#<span class="meta-keyword">define</span> O_RDONLY    0       <span class="comment">/* +1 == FREAD */</span></span></div><div class="line">    <span class="meta">#<span class="meta-keyword">define</span> O_WRONLY    1       <span class="comment">/* +1 == FWRITE */</span></span></div><div class="line">    <span class="meta">#<span class="meta-keyword">define</span> O_RDWR      2       <span class="comment">/* +1 == FREAD|FWRITE */</span></span></div><div class="line">    <span class="meta">#<span class="meta-keyword">define</span> O_EXEC          _FEXECSRCH</span></div><div class="line">    <span class="meta">#<span class="meta-keyword">define</span> O_SEARCH        _FEXECSRCH</span></div><div class="line">    </div><div class="line">    <span class="comment">/* 可选 */</span></div><div class="line">    <span class="meta">#<span class="meta-keyword">define</span> O_APPEND    _FAPPEND</span></div><div class="line">    <span class="meta">#<span class="meta-keyword">define</span> O_CREAT     _FCREAT</span></div><div class="line">    <span class="meta">#<span class="meta-keyword">define</span> O_TRUNC     _FTRUNC <span class="comment">/* 若文件存在，长度截为0 */</span></span></div><div class="line">    <span class="meta">#<span class="meta-keyword">define</span> O_EXCL      _FEXCL</span></div><div class="line">    <span class="meta">#<span class="meta-keyword">define</span> O_SYNC      _FSYNC</span></div><div class="line"></div><div class="line">    <span class="meta">#<span class="meta-keyword">define</span> O_NONBLOCK  _FNONBLOCK</span></div><div class="line">    <span class="meta">#<span class="meta-keyword">define</span> O_NOCTTY    _FNOCTTY</span></div><div class="line">    <span class="meta">#<span class="meta-keyword">define</span> O_BINARY    _FBINARY</span></div><div class="line">    <span class="meta">#<span class="meta-keyword">define</span> O_TEXT      _FTEXT</span></div><div class="line">    <span class="meta">#<span class="meta-keyword">define</span> O_CLOEXEC   _FNOINHERIT</span></div><div class="line">    <span class="meta">#<span class="meta-keyword">define</span> O_DIRECT        _FDIRECT</span></div><div class="line">    <span class="meta">#<span class="meta-keyword">define</span> O_NOFOLLOW      _FNOFOLLOW</span></div><div class="line">    <span class="meta">#<span class="meta-keyword">define</span> O_DSYNC         _FSYNC</span></div><div class="line">    <span class="meta">#<span class="meta-keyword">define</span> O_RSYNC         _FSYNC</span></div><div class="line">    <span class="meta">#<span class="meta-keyword">define</span> O_DIRECTORY     _FDIRECTORY</span></div><div class="line">   </div><div class="line">     <span class="comment">/* O_NDELAY    _FNDELAY    set in include/fcntl.h */</span></div><div class="line">    <span class="comment">/*  O_NDELAY    _FNBIO      set in include/fcntl.h */</span></div></pre></td></tr></table></figure>
+<p>openat 中的fd</p>
+<ol>
+<li>filepath 是绝对路径， 忽略fd.</li>
+<li>filepath 是相对路径， fd是相对路径名在文件系统中的开始地址。通过打开目录来获取filepath</li>
+<li>filepath 是相对路径， fd为AT_FDCWD，路径名在当前工作目录中获取。</li>
+</ol>
+<blockquote>
+<p>int create(const char *filepath, mode_t mode)</p>
+</blockquote>
+<p>等效于 open(filepath, O_WRONLY|O_CREAT|0_TRUNC, mode);</p>
+<blockquote>
+<p>int close(int fd)   include<unistd.h></unistd.h></p>
+</blockquote>
+<p>在一个进程结束时，内核自动关闭这个进程打开的所有文件。</p>
+<blockquote>
+<p>off_t lseek(int fd, off_t offset, int whence)</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">OFFSET:</div><div class="line">    <span class="meta"># <span class="meta-keyword">define</span>    SEEK_SET    0   <span class="comment">/* 距开始 */</span></span></div><div class="line">    <span class="meta"># <span class="meta-keyword">define</span>    SEEK_CUR    1   <span class="comment">/* 距当前 */</span></span></div><div class="line">    <span class="meta"># <span class="meta-keyword">define</span>    SEEK_END    2   <span class="comment">/* 距末尾 */</span></span></div></pre></td></tr></table></figure>
+<p><strong><em> 如果 fd 是管道、FIFO、socket lseek返回-1， 置errorno 为ESPIPE。偏移量有可能为负， 因此在检测lseek是否正确时应该使用 ==-1 来判断而不能使用 &lt;0来判断*</em></strong><br>当lseek超过文件长度时， 对该文件的下一次写将加长该文件，并在文件中构成一个空洞。空洞都被置为0.空洞不要求在磁盘上占用空间（不分配磁盘块）。</p>
+
       
     </div>
     
     
     
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Ele Ztian 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Ele Ztian 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Linux/" rel="tag"># Linux</a>
+          
+            <a href="/tags/c/" rel="tag"># c</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/Linux-进程间通信.html" rel="next" title="Linux 进程间通信">
+                <i class="fa fa-chevron-left"></i> Linux 进程间通信
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/Linux-信号机制.html" rel="prev" title="Linux 信号机制">
+                Linux 信号机制 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
   </div>
 
 
