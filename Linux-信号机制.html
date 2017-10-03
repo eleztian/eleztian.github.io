@@ -88,18 +88,18 @@
 
 
 
-<meta name="description" content="#概念  Linux中的信号（signal)也叫 “软中断信号”，用于通知进程发生的异步事件。 早期信号的处理方法： 指定处理函数，通过改函数中断处理 eg. signal(SIGALARM, handler)； 忽略该信号 eg. signal(SIGALARM, SIG_IGN； 对该信号的处理保留系统默认（缺省操作），eg. signal(SIGALARM, SIG_DFL),  大部分信号">
+<meta name="description" content="概念 Linux中的信号（signal)也叫 “软中断信号”，用于通知进程发生的异步事件。 早期信号的处理方法： 指定处理函数，通过改函数中断处理 eg. signal(SIGALARM, handler)； 忽略该信号 eg. signal(SIGALARM, SIG_IGN； 对该信号的处理保留系统默认（缺省操作），eg. signal(SIGALARM, SIG_DFL),  大部分信号的缺">
 <meta name="keywords" content="Linux,c">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux 信号机制">
 <meta property="og:url" content="https://eleztian.github.io/Linux-信号机制.html">
 <meta property="og:site_name" content="Ele Ztian&#39;s Blog">
-<meta property="og:description" content="#概念  Linux中的信号（signal)也叫 “软中断信号”，用于通知进程发生的异步事件。 早期信号的处理方法： 指定处理函数，通过改函数中断处理 eg. signal(SIGALARM, handler)； 忽略该信号 eg. signal(SIGALARM, SIG_IGN； 对该信号的处理保留系统默认（缺省操作），eg. signal(SIGALARM, SIG_DFL),  大部分信号">
+<meta property="og:description" content="概念 Linux中的信号（signal)也叫 “软中断信号”，用于通知进程发生的异步事件。 早期信号的处理方法： 指定处理函数，通过改函数中断处理 eg. signal(SIGALARM, handler)； 忽略该信号 eg. signal(SIGALARM, SIG_IGN； 对该信号的处理保留系统默认（缺省操作），eg. signal(SIGALARM, SIG_DFL),  大部分信号的缺">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-03T03:33:30.618Z">
+<meta property="og:updated_time" content="2017-10-03T03:36:24.368Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux 信号机制">
-<meta name="twitter:description" content="#概念  Linux中的信号（signal)也叫 “软中断信号”，用于通知进程发生的异步事件。 早期信号的处理方法： 指定处理函数，通过改函数中断处理 eg. signal(SIGALARM, handler)； 忽略该信号 eg. signal(SIGALARM, SIG_IGN； 对该信号的处理保留系统默认（缺省操作），eg. signal(SIGALARM, SIG_DFL),  大部分信号">
+<meta name="twitter:description" content="概念 Linux中的信号（signal)也叫 “软中断信号”，用于通知进程发生的异步事件。 早期信号的处理方法： 指定处理函数，通过改函数中断处理 eg. signal(SIGALARM, handler)； 忽略该信号 eg. signal(SIGALARM, SIG_IGN； 对该信号的处理保留系统默认（缺省操作），eg. signal(SIGALARM, SIG_DFL),  大部分信号的缺">
 
 
 
@@ -424,8 +424,7 @@
       
 
       
-        <p>#概念</p>
-<ul>
+        <h1 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h1><ul>
 <li>Linux中的信号（signal)也叫 <strong>“软中断信号”</strong>，用于通知进程发生的异步事件。</li>
 <li>早期信号的处理方法：<ol>
 <li>指定处理函数，通过改函数中断处理 eg. signal(SIGALARM, handler)；</li>
@@ -824,7 +823,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#编程"><span class="nav-number">1.</span> <span class="nav-text">编程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常见问题："><span class="nav-number">2.</span> <span class="nav-text">常见问题：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#特殊信号处理"><span class="nav-number">3.</span> <span class="nav-text">特殊信号处理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#信号的使用"><span class="nav-number">4.</span> <span class="nav-text">信号的使用</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#概念"><span class="nav-number">1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#编程"><span class="nav-number">2.</span> <span class="nav-text">编程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常见问题："><span class="nav-number">3.</span> <span class="nav-text">常见问题：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#特殊信号处理"><span class="nav-number">4.</span> <span class="nav-text">特殊信号处理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#信号的使用"><span class="nav-number">5.</span> <span class="nav-text">信号的使用</span></a></li></ol></div>
             
 
           </div>
