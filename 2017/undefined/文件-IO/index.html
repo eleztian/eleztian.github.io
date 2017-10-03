@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="Linux," />
+  <meta name="keywords" content="Linux,c," />
 
 
 
@@ -88,18 +88,18 @@
 
 
 
-<meta name="description" content="1) 准备工作，包括下载源码、建立交叉编译环境等。交叉开发是指在开发主机上安装开发工具，编辑、编译目标板的引导程序、内核和文件系统，使其能在目标板上运行。2) 配置和编bootloader（引导装载程序）。通过这段小程序，可以初始化硬件设备、建立内存空间的映射表，从而建立适当的系统硬件环境，为最终调用操作系统内核做好准备。3) 配置和编译Linux内核，对其进行相应的裁剪，修改内核以支持相关的硬件">
-<meta name="keywords" content="Linux">
+<meta name="description" content="文件描述符  类型：一个非负正整数范围：0 ~ OPEN_MAX - 1  OPEN_MAX 现在已经被取消 ulimit -a 查看系统最大打开文件数 ulimit -n 最大数目  修改最大打开文件数  常用惯例：  0 -&amp;gt; 标准输入   (STDIN_FILENO) 1 -&amp;gt; 标准输出   (STDOUT_FILENO) 2 -&amp;gt; 标准错误   (STDERR_FILE">
+<meta name="keywords" content="Linux,c">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux 系统移植步骤">
-<meta property="og:url" content="https://eleztian.github.io/Linux-系统移植步骤.html">
+<meta property="og:title" content="文件 IO">
+<meta property="og:url" content="https://eleztian.github.io/2017/undefined/文件-IO/index.html">
 <meta property="og:site_name" content="Ele Ztian&#39;s Blog">
-<meta property="og:description" content="1) 准备工作，包括下载源码、建立交叉编译环境等。交叉开发是指在开发主机上安装开发工具，编辑、编译目标板的引导程序、内核和文件系统，使其能在目标板上运行。2) 配置和编bootloader（引导装载程序）。通过这段小程序，可以初始化硬件设备、建立内存空间的映射表，从而建立适当的系统硬件环境，为最终调用操作系统内核做好准备。3) 配置和编译Linux内核，对其进行相应的裁剪，修改内核以支持相关的硬件">
+<meta property="og:description" content="文件描述符  类型：一个非负正整数范围：0 ~ OPEN_MAX - 1  OPEN_MAX 现在已经被取消 ulimit -a 查看系统最大打开文件数 ulimit -n 最大数目  修改最大打开文件数  常用惯例：  0 -&amp;gt; 标准输入   (STDIN_FILENO) 1 -&amp;gt; 标准输出   (STDOUT_FILENO) 2 -&amp;gt; 标准错误   (STDERR_FILE">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-03T03:50:43.561Z">
+<meta property="og:updated_time" content="2017-10-03T03:51:20.996Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Linux 系统移植步骤">
-<meta name="twitter:description" content="1) 准备工作，包括下载源码、建立交叉编译环境等。交叉开发是指在开发主机上安装开发工具，编辑、编译目标板的引导程序、内核和文件系统，使其能在目标板上运行。2) 配置和编bootloader（引导装载程序）。通过这段小程序，可以初始化硬件设备、建立内存空间的映射表，从而建立适当的系统硬件环境，为最终调用操作系统内核做好准备。3) 配置和编译Linux内核，对其进行相应的裁剪，修改内核以支持相关的硬件">
+<meta name="twitter:title" content="文件 IO">
+<meta name="twitter:description" content="文件描述符  类型：一个非负正整数范围：0 ~ OPEN_MAX - 1  OPEN_MAX 现在已经被取消 ulimit -a 查看系统最大打开文件数 ulimit -n 最大数目  修改最大打开文件数  常用惯例：  0 -&amp;gt; 标准输入   (STDIN_FILENO) 1 -&amp;gt; 标准输出   (STDOUT_FILENO) 2 -&amp;gt; 标准错误   (STDERR_FILE">
 
 
 
@@ -129,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="https://eleztian.github.io/Linux-系统移植步骤.html"/>
+  <link rel="canonical" href="https://eleztian.github.io/2017/undefined/文件-IO/"/>
 
 
 
 
 
-  <title>Linux 系统移植步骤 | Ele Ztian's Blog</title>
+  <title>文件 IO | Ele Ztian's Blog</title>
   
 
 
@@ -328,7 +328,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://eleztian.github.io/Linux-系统移植步骤.html">
+    <link itemprop="mainEntityOfPage" href="https://eleztian.github.io/2017/undefined/文件-IO/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Ele Ztian">
@@ -345,7 +345,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">Linux 系统移植步骤</h2>
+          <h2 class="post-title" itemprop="name headline">文件 IO</h2>
         
 
         <div class="post-meta">
@@ -357,7 +357,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-03T11:26:07+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-03T11:31:04+08:00">
                 2017-10-03
               </time>
             
@@ -380,8 +380,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/嵌入式/" itemprop="url" rel="index">
-                    <span itemprop="name">嵌入式</span>
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
                   </a>
                 </span>
 
@@ -411,7 +411,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  338
+                  472
                 </span>
               
 
@@ -427,7 +427,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  2
                 </span>
               
             </div>
@@ -448,7 +448,45 @@
       
 
       
-        <p>1) 准备工作，包括下载源码、建立交叉编译环境等。交叉开发是指在开发主机上安装开发工具，编辑、编译目标板的引导程序、内核和文件系统，使其能在目标板上运行。<br>2) 配置和编bootloader（引导装载程序）。通过这段小程序，可以初始化硬件设备、建立内存空间的映射表，从而建立适当的系统硬件环境，为最终调用操作系统内核做好准备。<br>3) 配置和编译Linux内核，对其进行相应的裁剪，修改内核以支持相关的硬件设备。<br>4) 为大容量NAND Flash移植YAFFS文件系统，并将该文件系统加入Linux内核中；<br>5) 制作RAMdisk来挂载根文件系统。Linux系统中的文件和设备是通过文件系统来组织的。文件系统的存在使得数据和设备可以被有效而透明地存取访问。一个linux的最简根文件系统应该包括支持linux系统正常运行的基本内容，包括系统使用的软件和库，以及所有用来为用户提供基本支持的架构和指令。<br>6) 烧写、调试系统；如果调试出错，则需要重新配置，返回上述步骤（2）。 </p>
+        <blockquote>
+<p>文件描述符</p>
+</blockquote>
+<p>类型：一个非负正整数<br>范围：0 ~ OPEN_MAX - 1</p>
+<ul>
+<li>OPEN_MAX 现在已经被取消</li>
+<li>ulimit -a 查看系统最大打开文件数</li>
+<li>ulimit -n 最大数目  修改最大打开文件数</li>
+</ul>
+<p>常用惯例：</p>
+<ul>
+<li>0 -&gt; 标准输入   (STDIN_FILENO)</li>
+<li>1 -&gt; 标准输出   (STDOUT_FILENO)</li>
+<li>2 -&gt; 标准错误   (STDERR_FILENO)</li>
+</ul>
+<blockquote>
+<p>int open(const char<em> filepath, int oflag, …)<br>  int openat(int fd, const char </em>filepath, int oflag, … )</p>
+</blockquote>
+<p>返回的fd一定是未使用的文件描述符中最小的</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">OFLAG:</div><div class="line">    <span class="comment">/* 有且仅有一个 */</span></div><div class="line">    <span class="meta">#<span class="meta-keyword">define</span> O_RDONLY    0       <span class="comment">/* +1 == FREAD */</span></span></div><div class="line">    <span class="meta">#<span class="meta-keyword">define</span> O_WRONLY    1       <span class="comment">/* +1 == FWRITE */</span></span></div><div class="line">    <span class="meta">#<span class="meta-keyword">define</span> O_RDWR      2       <span class="comment">/* +1 == FREAD|FWRITE */</span></span></div><div class="line">    <span class="meta">#<span class="meta-keyword">define</span> O_EXEC          _FEXECSRCH</span></div><div class="line">    <span class="meta">#<span class="meta-keyword">define</span> O_SEARCH        _FEXECSRCH</span></div><div class="line">    </div><div class="line">    <span class="comment">/* 可选 */</span></div><div class="line">    <span class="meta">#<span class="meta-keyword">define</span> O_APPEND    _FAPPEND</span></div><div class="line">    <span class="meta">#<span class="meta-keyword">define</span> O_CREAT     _FCREAT</span></div><div class="line">    <span class="meta">#<span class="meta-keyword">define</span> O_TRUNC     _FTRUNC <span class="comment">/* 若文件存在，长度截为0 */</span></span></div><div class="line">    <span class="meta">#<span class="meta-keyword">define</span> O_EXCL      _FEXCL</span></div><div class="line">    <span class="meta">#<span class="meta-keyword">define</span> O_SYNC      _FSYNC</span></div><div class="line"></div><div class="line">    <span class="meta">#<span class="meta-keyword">define</span> O_NONBLOCK  _FNONBLOCK</span></div><div class="line">    <span class="meta">#<span class="meta-keyword">define</span> O_NOCTTY    _FNOCTTY</span></div><div class="line">    <span class="meta">#<span class="meta-keyword">define</span> O_BINARY    _FBINARY</span></div><div class="line">    <span class="meta">#<span class="meta-keyword">define</span> O_TEXT      _FTEXT</span></div><div class="line">    <span class="meta">#<span class="meta-keyword">define</span> O_CLOEXEC   _FNOINHERIT</span></div><div class="line">    <span class="meta">#<span class="meta-keyword">define</span> O_DIRECT        _FDIRECT</span></div><div class="line">    <span class="meta">#<span class="meta-keyword">define</span> O_NOFOLLOW      _FNOFOLLOW</span></div><div class="line">    <span class="meta">#<span class="meta-keyword">define</span> O_DSYNC         _FSYNC</span></div><div class="line">    <span class="meta">#<span class="meta-keyword">define</span> O_RSYNC         _FSYNC</span></div><div class="line">    <span class="meta">#<span class="meta-keyword">define</span> O_DIRECTORY     _FDIRECTORY</span></div><div class="line">   </div><div class="line">     <span class="comment">/* O_NDELAY    _FNDELAY    set in include/fcntl.h */</span></div><div class="line">    <span class="comment">/*  O_NDELAY    _FNBIO      set in include/fcntl.h */</span></div></pre></td></tr></table></figure>
+<p>openat 中的fd</p>
+<ol>
+<li>filepath 是绝对路径， 忽略fd.</li>
+<li>filepath 是相对路径， fd是相对路径名在文件系统中的开始地址。通过打开目录来获取filepath</li>
+<li>filepath 是相对路径， fd为AT_FDCWD，路径名在当前工作目录中获取。</li>
+</ol>
+<blockquote>
+<p>int create(const char *filepath, mode_t mode)</p>
+</blockquote>
+<p>等效于 open(filepath, O_WRONLY|O_CREAT|0_TRUNC, mode);</p>
+<blockquote>
+<p>int close(int fd)   include<unistd.h></unistd.h></p>
+</blockquote>
+<p>在一个进程结束时，内核自动关闭这个进程打开的所有文件。</p>
+<blockquote>
+<p>off_t lseek(int fd, off_t offset, int whence)</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">OFFSET:</div><div class="line">    <span class="meta"># <span class="meta-keyword">define</span>    SEEK_SET    0   <span class="comment">/* 距开始 */</span></span></div><div class="line">    <span class="meta"># <span class="meta-keyword">define</span>    SEEK_CUR    1   <span class="comment">/* 距当前 */</span></span></div><div class="line">    <span class="meta"># <span class="meta-keyword">define</span>    SEEK_END    2   <span class="comment">/* 距末尾 */</span></span></div></pre></td></tr></table></figure>
+<p><strong><em> 如果 fd 是管道、FIFO、socket lseek返回-1， 置errorno 为ESPIPE。偏移量有可能为负， 因此在检测lseek是否正确时应该使用 ==-1 来判断而不能使用 &lt;0来判断*</em></strong><br>当lseek超过文件长度时， 对该文件的下一次写将加长该文件，并在文件中构成一个空洞。空洞都被置为0.空洞不要求在磁盘上占用空间（不分配磁盘块）。</p>
 
       
     </div>
@@ -497,6 +535,8 @@
           
             <a href="/tags/Linux/" rel="tag"># Linux</a>
           
+            <a href="/tags/c/" rel="tag"># c</a>
+          
         </div>
       
 
@@ -508,8 +548,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/Fork-and-exec.html" rel="next" title="Fork and exec ">
-                <i class="fa fa-chevron-left"></i> Fork and exec 
+              <a href="/2017/undefined/Linux-进程间通信/" rel="next" title="Linux 进程间通信">
+                <i class="fa fa-chevron-left"></i> Linux 进程间通信
               </a>
             
           </div>
@@ -518,8 +558,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/Linux-进程间通信.html" rel="prev" title="Linux 进程间通信">
-                Linux 进程间通信 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/undefined/Linux-信号机制/" rel="prev" title="Linux 信号机制">
+                Linux 信号机制 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
