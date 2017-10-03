@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>https://eleztian.github.io/C-notes.html</loc>
+        <lastmod>2017-10-03T03:37:05.656Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://eleztian.github.io/Linux-%E4%BF%A1%E5%8F%B7%E6%9C%BA%E5%88%B6.html</loc>
         <lastmod>2017-10-03T03:36:24.368Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -41,14 +49,6 @@
     <url>
         <loc>https://eleztian.github.io/Fork-and-exec.html</loc>
         <lastmod>2017-10-03T03:28:31.591Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://eleztian.github.io/C-notes.html</loc>
-        <lastmod>2017-10-03T02:52:52.105Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

@@ -16,13 +16,6 @@
     </url>
 
     <url>
-        <loc>https://eleztian.github.io/tags/c-notes/</loc>
-        <lastmod>2017-10-03T02:52:52.105Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://eleztian.github.io/tags/Linux/</loc>
         <lastmod>2017-10-03T03:36:24.368Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -32,6 +25,20 @@
     <url>
         <loc>https://eleztian.github.io/tags/c/</loc>
         <lastmod>2017-10-03T03:36:24.368Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://eleztian.github.io/tags/c/</loc>
+        <lastmod>2017-10-03T03:37:05.656Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://eleztian.github.io/tags/notes/</loc>
+        <lastmod>2017-10-03T03:37:05.656Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
