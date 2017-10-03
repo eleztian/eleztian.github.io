@@ -314,7 +314,12 @@
   
   
   <div class="post-block tag">
-
+    <div class="layout-wrap-inner tag-cloud">
+      <% if(site.tags.length) { %>
+        <%- tagcloud() %>
+      <% } %>
+    </div>
+    
     <div id="posts" class="posts-collapse">
       <div class="collection-title">
         <h2>notes<small>标签</small>
