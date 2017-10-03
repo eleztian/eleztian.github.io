@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT, eleztian" />
+  <meta name="keywords" content="c++, notes," />
 
 
 
@@ -88,17 +88,18 @@
 
 
 
-<meta name="description" content="勤工出巧匠">
-<meta property="og:type" content="website">
-<meta property="og:title" content="About">
-<meta property="og:url" content="https://eleztian.github.io/about/index.html">
+<meta name="description" content="复习C++笔记">
+<meta name="keywords" content="c++, notes">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++ Notes">
+<meta property="og:url" content="https://eleztian.github.io/C-notes.html">
 <meta property="og:site_name" content="Ele Ztian&#39;s Blog">
-<meta property="og:description" content="勤工出巧匠">
+<meta property="og:description" content="复习C++笔记">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-01T14:37:07.502Z">
+<meta property="og:updated_time" content="2017-10-03T02:52:52.105Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="About">
-<meta name="twitter:description" content="勤工出巧匠">
+<meta name="twitter:title" content="C++ Notes">
+<meta name="twitter:description" content="复习C++笔记">
 
 
 
@@ -128,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="https://eleztian.github.io/about/"/>
+  <link rel="canonical" href="https://eleztian.github.io/C-notes.html"/>
 
 
 
 
 
-  <title>About | Ele Ztian's Blog</title>
+  <title>C++ Notes | Ele Ztian's Blog</title>
   
 
 
@@ -313,33 +314,251 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://eleztian.github.io/C-notes.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Ele Ztian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/photo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ele Ztian's Blog">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h2 class="post-title" itemprop="name headline">About</h2>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
+          <h2 class="post-title" itemprop="name headline">C++ Notes</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-03T10:11:11+08:00">
+                2017-10-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-      </div>
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  490
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+              <div class="post-description">
+                  复习C++笔记
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <h3 id="名字空间（namespace）"><a href="#名字空间（namespace）" class="headerlink" title="名字空间（namespace）"></a>名字空间（namespace）</h3><p>防止命名冲突 std：c++标准库<br>using namespace std; 表示引入标准库的所有命名，否则的话如cout就需要使用 std::cout或者写成 #include <iostream.h></iostream.h></p>
+<ol>
+<li>const int *p; // 指向常量的指针</li>
+<li>int * coust p; // 常指针</li>
+<li>const int * const p; // 指向常量的常指针</li>
+</ol>
+<h3 id="作用于运算符"><a href="#作用于运算符" class="headerlink" title="作用于运算符::"></a>作用于运算符::</h3><p>::a  全局变量a</p>
+<h3 id="带默认参数的函数"><a href="#带默认参数的函数" class="headerlink" title="带默认参数的函数"></a>带默认参数的函数</h3><p>默认参数必须放在没有指定默认参数的右边。</p>
+<h3 id="类"><a href="#类" class="headerlink" title="类"></a>类</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> 类名</span></div><div class="line"><span class="class">&#123;</span></div><div class="line"><span class="keyword">private</span>: <span class="comment">// 当private紧邻&#123; 时 可以省略private关键字，即class默认类型为priavte</span></div><div class="line">    私有成员函数后变量   <span class="comment">// 只能被被类的函数调用或访问</span></div><div class="line"><span class="keyword">public</span>:</div><div class="line">    共有成员函数或变量   <span class="comment">// 对外开放，既可以被本类访问，也可以通过类的对象调用或访问</span></div><div class="line"><span class="keyword">private</span>:</div><div class="line">    保护成员函数或变量   <span class="comment">// 只能被本类的成员函数或其他派生类的成员函数访问和调用</span></div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>6.<br>类方法的定义</p>
+<ol>
+<li>内联函数的隐式定义， 直接在public等修饰词下定义</li>
+<li>内联函数的显示定义， 在类外面， 定义 前加inline关键字 要加作用域</li>
+<li>非内联函数定义， 在累外面定义  要加作用域</li>
+</ol>
+<hr>
+<p>7.<br>构造函数<br>    带默认参数的构造函数，默认参数在声明里指定，在定义里不能指定<br>    复制构造函数：常常使用引用，如 类名(const 类名 &amp;引用对象名); 类存在默认的复制构造函数，<br>对每一个成员执行复制操作。但是默认复制构造函数有时候会导致指针悬挂的问题，应为默认的复制构造函数是值得复制，<br>而不是内存的深层复制，即是只是复制指针地址。这就导致前一个类结束生命时释放了内存，后一个类又重复释放内存导致出错。</p>
+<h2 id="析构函数"><a href="#析构函数" class="headerlink" title="析构函数"></a>析构函数</h2><p>8.</p>
+
       
     </div>
     
     
     
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Ele Ztian 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Ele Ztian 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/c-notes/" rel="tag"># c++, notes</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/hello-world.html" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
   </div>
 
 
@@ -348,6 +567,12 @@
 
 
           
+  
+     
+       <div id="gitment-container"></div>
+     
+  
+
 
         </div>
         
@@ -368,8 +593,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -453,6 +687,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#名字空间（namespace）"><span class="nav-number">1.</span> <span class="nav-text">名字空间（namespace）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#作用于运算符"><span class="nav-number">2.</span> <span class="nav-text">作用于运算符::</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#带默认参数的函数"><span class="nav-number">3.</span> <span class="nav-text">带默认参数的函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类"><span class="nav-number">4.</span> <span class="nav-text">类</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#析构函数"><span class="nav-number"></span> <span class="nav-text">析构函数</span></a></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
