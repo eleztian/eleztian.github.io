@@ -5,6 +5,6 @@ db.json
 node_modules/
 public/
 .deploy*/
-source/_posts/
-source/_drafts/
-source/images/
+source/_posts/*
+source/_drafts/*
+source/images/*
