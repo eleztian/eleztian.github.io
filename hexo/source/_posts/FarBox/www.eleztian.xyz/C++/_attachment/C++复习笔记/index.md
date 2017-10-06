@@ -14,7 +14,7 @@ comments: false
 **领域**：嵌入式软件
 **学校**：重庆理工大学(2014级)
 **专业**：计算机科学与技术
-**博客**：[www.eleztian.xyz](https://www.eleztian.xyz/)
+**博客**：[www.eleztian.xyz](www.eleztian.xyz)
 ## **博客技术**
 **框架**：Hexo
 **主题**：next(Gemini)

@@ -5,8 +5,8 @@
 # Site
 language: zh-Hans
 title: Ele Ztian's Blog #博客标题
-subtitle: Essay #博客副标题
-description: 勤工出巧匠 #博客描述
+subtitle: Notes && Essay #博客副标题
+description: 苟日新,日日新,又日新。 #博客描述
 author: Ele Ztian 
 avatar: /photo.jpg
 timezone:
