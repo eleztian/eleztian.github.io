@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="abstract,">
+  <meta name="keywords" content="stack,">
 
 
 
@@ -79,21 +79,18 @@
 
 
 
-<meta name="keywords" content="abstract">
+<meta name="description" content="Leecode P20:给定一个只包括 ‘(‘，’)’，’{‘，’}’，’[‘，’]’ 的字符串，判断字符串是否有效。">
+<meta name="keywords" content="stack">
 <meta property="og:type" content="article">
-<meta property="og:title" content="abstract">
-<meta property="og:url" content="https://eleztian.github.io/2019/03/14/abstract/index.html">
+<meta property="og:title" content="abstrct_stack">
+<meta property="og:url" content="https://eleztian.github.io/2019/03/16/abstrct-stack/index.html">
 <meta property="og:site_name" content="Crazy Snail">
+<meta property="og:description" content="Leecode P20:给定一个只包括 ‘(‘，’)’，’{‘，’}’，’[‘，’]’ 的字符串，判断字符串是否有效。">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:image" content="https://eleztian.github.io/2019/03/14/abstract/elements.png">
-<meta property="og:image" content="https://eleztian.github.io/2019/03/14/abstract/AbstractType.png">
-<meta property="og:image" content="https://eleztian.github.io/2019/03/14/abstract/elements.png">
-<meta property="og:image" content="https://eleztian.github.io/2019/03/14/abstract/data-op-time.png">
-<meta property="og:image" content="https://eleztian.github.io/2019/03/14/abstract/sort.png">
-<meta property="og:updated_time" content="2019-03-16T07:55:43.248Z">
+<meta property="og:updated_time" content="2019-03-16T08:45:02.711Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="abstract">
-<meta name="twitter:image" content="https://eleztian.github.io/2019/03/14/abstract/elements.png">
+<meta name="twitter:title" content="abstrct_stack">
+<meta name="twitter:description" content="Leecode P20:给定一个只包括 ‘(‘，’)’，’{‘，’}’，’[‘，’]’ 的字符串，判断字符串是否有效。">
 
 
 
@@ -123,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://eleztian.github.io/2019/03/14/abstract/">
+  <link rel="canonical" href="https://eleztian.github.io/2019/03/16/abstrct-stack/">
 
 
 
 
 
-  <title>abstract | Crazy Snail</title>
+  <title>abstrct_stack | Crazy Snail</title>
   
 
 
@@ -276,7 +273,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://eleztian.github.io/2019/03/14/abstract/">
+    <link itemprop="mainEntityOfPage" href="https://eleztian.github.io/2019/03/16/abstrct-stack/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tab Zhang">
@@ -293,7 +290,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">abstract</h1>
+          <h1 class="post-title" itemprop="name headline">abstrct_stack</h1>
         
 
         <div class="post-meta">
@@ -305,8 +302,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-14T21:04:31+08:00">
-                2019-03-14
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-16T16:28:22+08:00">
+                2019-03-16
               </time>
             
 
@@ -316,6 +313,28 @@
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/abstract/" itemprop="url" rel="index">
+                    <span itemprop="name">abstract</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -324,8 +343,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/03/14/abstract/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/03/14/abstract/" itemprop="commentCount"></span>
+                <a href="/2019/03/16/abstrct-stack/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/03/16/abstrct-stack/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -353,14 +372,29 @@
       
 
       
-        <p><img src="/2019/03/14/abstract/elements.png" alt="时间复杂度梯度变更"><br><a id="more"></a></p>
-<h1 id="Data-Type"><a href="#Data-Type" class="headerlink" title="Data Type"></a>Data Type</h1><p><img src="/2019/03/14/abstract/AbstractType.png" alt="常见数据类型"></p>
-<h1 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h1><blockquote>
-<p>图片来源: <a href="http://www.bigocheatsheet.com/" target="_blank" rel="noopener">http://www.bigocheatsheet.com/</a></p>
-</blockquote>
-<h2 id="时间复杂度变化"><a href="#时间复杂度变化" class="headerlink" title="时间复杂度变化"></a>时间复杂度变化</h2><p><img src="/2019/03/14/abstract/elements.png" alt="时间复杂度梯度变更"></p>
-<h2 id="常见数据结构时间复杂度"><a href="#常见数据结构时间复杂度" class="headerlink" title="常见数据结构时间复杂度"></a>常见数据结构时间复杂度</h2><p><img src="/2019/03/14/abstract/data-op-time.png" alt="常见数据结构时间复杂度"></p>
-<h2 id="常见排序算法时间复杂度"><a href="#常见排序算法时间复杂度" class="headerlink" title="常见排序算法时间复杂度"></a>常见排序算法时间复杂度</h2><p><img src="/2019/03/14/abstract/sort.png" alt="常见排序算法时间复杂度"></p>
+        <p><a href="https://leetcode.com/problems/valid-parentheses/" target="_blank" rel="noopener">Leecode P20</a>:<br>给定一个只包括 ‘(‘，’)’，’{‘，’}’，’[‘，’]’ 的字符串，判断字符串是否有效。<br><a id="more"></a></p>
+<h1 id="Stack"><a href="#Stack" class="headerlink" title="Stack"></a>Stack</h1><h2 id="Leecode-P20"><a href="#Leecode-P20" class="headerlink" title="Leecode P20:"></a><a href="https://leetcode.com/problems/valid-parentheses/" target="_blank" rel="noopener">Leecode P20</a>:</h2><h3 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h3><pre><code>Given a string containing just the characters &apos;(&apos;, &apos;)&apos;, &apos;{&apos;, &apos;}&apos;, &apos;[&apos; and &apos;]&apos;, determine if the input string is valid.
+
+An input string is valid if:
+    1. Open brackets must be closed by the same type of brackets.
+    2. Open brackets must be closed in the correct order.
+Note that an empty string is also considered valid.
+</code></pre><h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p>使用堆栈进行解答</p>
+<pre><code>for 遍历字符串 {
+    1. 是左括号入栈
+    2. 不是左括号：
+       1. 栈顶是所匹配的左括号，pop（）栈顶元素出栈
+       2. 不是所匹配的左括号，或者栈为空 return false
+}
+
+return 栈是否为空
+</code></pre><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">isValid</span><span class="params">(s <span class="keyword">string</span>)</span> <span class="title">bool</span></span> &#123;</span><br><span class="line">	stack := <span class="built_in">make</span>([]<span class="keyword">byte</span>, <span class="number">0</span>)</span><br><span class="line">	hash := <span class="keyword">map</span>[<span class="keyword">byte</span>]<span class="keyword">byte</span>&#123;<span class="string">')'</span>: <span class="string">'('</span>, <span class="string">']'</span>: <span class="string">'['</span>, <span class="string">'&#125;'</span>: <span class="string">'&#123;'</span>&#125;</span><br><span class="line">	<span class="keyword">for</span> _, v := <span class="keyword">range</span> s &#123;</span><br><span class="line">		t, ok := hash[<span class="keyword">byte</span>(v)]</span><br><span class="line">		<span class="keyword">if</span> !ok &#123;</span><br><span class="line">			stack = <span class="built_in">append</span>(stack, <span class="keyword">byte</span>(v))</span><br><span class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span> l := <span class="built_in">len</span>(stack); l != <span class="number">0</span> &amp;&amp; t == stack[l<span class="number">-1</span>] &#123;</span><br><span class="line">			stack = stack[:l<span class="number">-1</span>]</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">len</span>(stack) == <span class="number">0</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 测试用例：</span></span><br><span class="line">tb := assert.TestTable&#123;</span><br><span class="line">		<span class="string">""</span>:        <span class="literal">true</span>,</span><br><span class="line">		<span class="string">"()"</span>:      <span class="literal">true</span>,</span><br><span class="line">		<span class="string">"([&#123;&#125;])"</span>:  <span class="literal">true</span>,</span><br><span class="line">		<span class="string">"(((&#123;&#125;))"</span>: <span class="literal">false</span>,</span><br><span class="line">		<span class="string">"[([)]]"</span>:  <span class="literal">false</span>,</span><br><span class="line">		<span class="string">"(([])))"</span>: <span class="literal">false</span>,</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Feedback"><a href="#Feedback" class="headerlink" title="Feedback"></a>Feedback</h3><ul>
+<li><p>字符替换</p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> isValid = <span class="function"><span class="keyword">function</span>(<span class="params">s</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (s.length &amp; <span class="number">1</span>) <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">    <span class="keyword">let</span> old</span><br><span class="line">    <span class="keyword">do</span> &#123;</span><br><span class="line">        old = s</span><br><span class="line">        s = s.replace(<span class="regexp">/(\[\]|\(\)|\&#123;\&#125;)/g</span>, <span class="string">''</span>)</span><br><span class="line">    &#125; <span class="keyword">while</span> (old.length !== s.length)</span><br><span class="line">    <span class="keyword">return</span> s.length === <span class="number">0</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  <strong>点评：</strong> 代码简洁，但是replace 时间复杂度过高。</p>
+</li>
+</ul>
 
       
     </div>
@@ -378,7 +412,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/abstract/" rel="tag"># abstract</a>
+            <a href="/tags/stack/" rel="tag"># stack</a>
           
         </div>
       
@@ -391,15 +425,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/03/16/A-Bunch-of-Cheatsheets/" rel="next" title="A Bunch of Cheatsheets">
+                <i class="fa fa-chevron-left"></i> A Bunch of Cheatsheets
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/16/golang-packages/" rel="prev" title="Golang Packages">
-                Golang Packages <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -541,7 +575,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Data-Type"><span class="nav-number">1.</span> <span class="nav-text">Data Type</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#时间复杂度"><span class="nav-number">2.</span> <span class="nav-text">时间复杂度</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#时间复杂度变化"><span class="nav-number">2.1.</span> <span class="nav-text">时间复杂度变化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常见数据结构时间复杂度"><span class="nav-number">2.2.</span> <span class="nav-text">常见数据结构时间复杂度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常见排序算法时间复杂度"><span class="nav-number">2.3.</span> <span class="nav-text">常见排序算法时间复杂度</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Stack"><span class="nav-number">1.</span> <span class="nav-text">Stack</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Leecode-P20"><span class="nav-number">1.1.</span> <span class="nav-text">Leecode P20:</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#描述"><span class="nav-number">1.1.1.</span> <span class="nav-text">描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解题思路"><span class="nav-number">1.1.2.</span> <span class="nav-text">解题思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码"><span class="nav-number">1.1.3.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Feedback"><span class="nav-number">1.1.4.</span> <span class="nav-text">Feedback</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -704,9 +738,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://eleztian.github.io/2019/03/14/abstract/';
-          this.page.identifier = '2019/03/14/abstract/';
-          this.page.title = 'abstract';
+          this.page.url = 'https://eleztian.github.io/2019/03/16/abstrct-stack/';
+          this.page.identifier = '2019/03/16/abstrct-stack/';
+          this.page.title = 'abstrct_stack';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://eleztian-github-io.disqus.com/embed.js';
