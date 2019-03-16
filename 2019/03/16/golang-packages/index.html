@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="tabZhang, blog">
+  <meta name="keywords" content="golang,">
 
 
 
@@ -79,18 +79,17 @@
 
 
 
-<meta name="description" content="Golang Packagejsongithub.com/bitly/go-simplejson 直接操作json Example package main  import (     &quot;fmt&quot;     &quot;github.com/bitly/go-simplejson&quot; )  func main() {     json, err := simplejson.NewJson([]byte(`{&quot;a">
-<meta name="keywords" content="blog eleztian tabzhang">
+<meta name="keywords" content="golang">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Crazy Snail">
+<meta property="og:title" content="Golang Packages">
 <meta property="og:url" content="https://eleztian.github.io/2019/03/16/golang-packages/index.html">
 <meta property="og:site_name" content="Crazy Snail">
-<meta property="og:description" content="Golang Packagejsongithub.com/bitly/go-simplejson 直接操作json Example package main  import (     &quot;fmt&quot;     &quot;github.com/bitly/go-simplejson&quot; )  func main() {     json, err := simplejson.NewJson([]byte(`{&quot;a">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2019-03-16T05:27:55.349Z">
+<meta property="og:image" content="https://eleztian.github.io/2019/03/16/golang-packages/golang.jpg">
+<meta property="og:updated_time" content="2019-03-16T07:51:32.061Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Crazy Snail">
-<meta name="twitter:description" content="Golang Packagejsongithub.com/bitly/go-simplejson 直接操作json Example package main  import (     &quot;fmt&quot;     &quot;github.com/bitly/go-simplejson&quot; )  func main() {     json, err := simplejson.NewJson([]byte(`{&quot;a">
+<meta name="twitter:title" content="Golang Packages">
+<meta name="twitter:image" content="https://eleztian.github.io/2019/03/16/golang-packages/golang.jpg">
 
 
 
@@ -126,7 +125,7 @@
 
 
 
-  <title> | Crazy Snail</title>
+  <title>Golang Packages | Crazy Snail</title>
   
 
 
@@ -290,7 +289,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline"></h1>
+          <h1 class="post-title" itemprop="name headline">Golang Packages</h1>
         
 
         <div class="post-meta">
@@ -302,7 +301,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-16T13:27:55+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-16T15:04:21+08:00">
                 2019-03-16
               </time>
             
@@ -350,39 +349,11 @@
       
 
       
-        <h1 id="Golang-Package"><a href="#Golang-Package" class="headerlink" title="Golang Package"></a>Golang Package</h1><h2 id="json"><a href="#json" class="headerlink" title="json"></a>json</h2><h3 id="github-com-bitly-go-simplejson"><a href="#github-com-bitly-go-simplejson" class="headerlink" title="github.com/bitly/go-simplejson"></a>github.com/bitly/go-simplejson</h3><ul>
+        <p><img src="/2019/03/16/golang-packages/golang.jpg" alt="golang"><br><a id="more"></a></p>
+<h1 id="Golang-Package"><a href="#Golang-Package" class="headerlink" title="Golang Package"></a>Golang Package</h1><h2 id="json"><a href="#json" class="headerlink" title="json"></a>json</h2><h3 id="github-com-bitly-go-simplejson"><a href="#github-com-bitly-go-simplejson" class="headerlink" title="github.com/bitly/go-simplejson"></a>github.com/bitly/go-simplejson</h3><ul>
 <li>直接操作json</li>
 <li><p>Example</p>
-<pre><code class="go"><span class="keyword">package</span> main
-
-<span class="keyword">import</span> (
-    <span class="string">"fmt"</span>
-    <span class="string">"github.com/bitly/go-simplejson"</span>
-)
-
-<span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> {
-    json, err := simplejson.NewJson([]<span class="keyword">byte</span>(<span class="string">`{"a":123}`</span>), )
-    <span class="keyword">if</span> err != <span class="literal">nil</span> {
-        <span class="built_in">panic</span>(err)
-    }
-    a, err := json.Get(<span class="string">"a"</span>).Int()
-    <span class="keyword">if</span> err != <span class="literal">nil</span> {
-        <span class="built_in">panic</span>(err)
-    }
-    fmt.Println(a) <span class="comment">// out: 123</span>
-    nJson := simplejson.New()
-    nJson.Set(<span class="string">"a"</span>, <span class="number">123</span>)
-
-    nJson.SetPath([]<span class="keyword">string</span>{<span class="string">"a"</span>,<span class="string">"b"</span>,<span class="string">"m"</span>}, <span class="number">456</span>)
-    nJson.SetPath([]<span class="keyword">string</span>{<span class="string">"a"</span>,<span class="string">"b"</span>,<span class="string">"c"</span>,<span class="string">"d"</span>}, <span class="keyword">map</span>[<span class="keyword">string</span>]<span class="keyword">interface</span>{}{<span class="string">"a"</span>:<span class="number">123</span>, <span class="string">"b"</span>:<span class="number">456</span>, <span class="string">"c"</span>:<span class="string">"string"</span>})
-    b, err := nJson.MarshalJSON()
-    <span class="keyword">if</span> err != <span class="literal">nil</span> {
-        <span class="built_in">panic</span>(err)
-    }
-    fmt.Println(<span class="keyword">string</span>(b)) <span class="comment">// out: {"a":{"b":{"c":{"d":{"a":123,"b":456,"c":"string"}},"m":456}}}</span>
-}
-
-</code></pre>
+ <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">    <span class="string">"fmt"</span></span><br><span class="line">    <span class="string">"github.com/bitly/go-simplejson"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    json, err := simplejson.NewJson([]<span class="keyword">byte</span>(<span class="string">`&#123;"a":123&#125;`</span>), )</span><br><span class="line">    <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">        <span class="built_in">panic</span>(err)</span><br><span class="line">    &#125;</span><br><span class="line">    a, err := json.Get(<span class="string">"a"</span>).Int()</span><br><span class="line">    <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">        <span class="built_in">panic</span>(err)</span><br><span class="line">    &#125;</span><br><span class="line">    fmt.Println(a) <span class="comment">// out: 123</span></span><br><span class="line">    nJson := simplejson.New()</span><br><span class="line">    nJson.Set(<span class="string">"a"</span>, <span class="number">123</span>)</span><br><span class="line"></span><br><span class="line">    nJson.SetPath([]<span class="keyword">string</span>&#123;<span class="string">"a"</span>,<span class="string">"b"</span>,<span class="string">"m"</span>&#125;, <span class="number">456</span>)</span><br><span class="line">    nJson.SetPath([]<span class="keyword">string</span>&#123;<span class="string">"a"</span>,<span class="string">"b"</span>,<span class="string">"c"</span>,<span class="string">"d"</span>&#125;, <span class="keyword">map</span>[<span class="keyword">string</span>]<span class="keyword">interface</span>&#123;&#125;&#123;<span class="string">"a"</span>:<span class="number">123</span>, <span class="string">"b"</span>:<span class="number">456</span>, <span class="string">"c"</span>:<span class="string">"string"</span>&#125;)</span><br><span class="line">    b, err := nJson.MarshalJSON()</span><br><span class="line">    <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">        <span class="built_in">panic</span>(err)</span><br><span class="line">    &#125;</span><br><span class="line">    fmt.Println(<span class="keyword">string</span>(b)) <span class="comment">// out: &#123;"a":&#123;"b":&#123;"c":&#123;"d":&#123;"a":123,"b":456,"c":"string"&#125;&#125;,"m":456&#125;&#125;&#125;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h2 id="Thirty-platform-SDK"><a href="#Thirty-platform-SDK" class="headerlink" title="Thirty platform SDK"></a>Thirty platform SDK</h2><h3 id="github-com-aws-aws-sdk-go"><a href="#github-com-aws-aws-sdk-go" class="headerlink" title="github.com/aws/aws-sdk-go"></a>github.com/aws/aws-sdk-go</h3><h2 id="Database"><a href="#Database" class="headerlink" title="Database"></a>Database</h2><h3 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h3><ul>
@@ -425,6 +396,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/golang/" rel="tag"># golang</a>
+          
+        </div>
+      
 
       
       
@@ -444,8 +421,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/03/16/abstract_array/" rel="prev" title>
-                 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/03/16/A-Bunch-of-Cheatsheets/" rel="prev" title="A Bunch of Cheatsheets">
+                A Bunch of Cheatsheets <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -533,21 +510,12 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
             
 
-            
-              
-              
-              <div class="site-state-item site-state-categories">
-                <a href="/categories/index.html">
-                  <span class="site-state-item-count">1</span>
-                  <span class="site-state-item-name">categories</span>
-                </a>
-              </div>
             
 
             
@@ -753,7 +721,7 @@
         var disqus_config = function () {
           this.page.url = 'https://eleztian.github.io/2019/03/16/golang-packages/';
           this.page.identifier = '2019/03/16/golang-packages/';
-          this.page.title = '';
+          this.page.title = 'Golang Packages';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://eleztian-github-io.disqus.com/embed.js';
