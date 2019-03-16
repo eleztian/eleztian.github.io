@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="abstract,">
+  <meta name="keywords" content="tabZhang, blog">
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="Data Type">
-<meta name="keywords" content="abstract">
+<meta name="description" content="Golang Packagejsongithub.com/bitly/go-simplejson 直接操作json Example package main  import (     &quot;fmt&quot;     &quot;github.com/bitly/go-simplejson&quot; )  func main() {     json, err := simplejson.NewJson([]byte(`{&quot;a">
+<meta name="keywords" content="blog eleztian tabzhang">
 <meta property="og:type" content="article">
-<meta property="og:title" content="abstract">
-<meta property="og:url" content="https://eleztian.github.io/2019/03/14/abstract/index.html">
+<meta property="og:title" content="Crazy Snail">
+<meta property="og:url" content="https://eleztian.github.io/2019/03/16/golang-packages/index.html">
 <meta property="og:site_name" content="Crazy Snail">
-<meta property="og:description" content="Data Type">
+<meta property="og:description" content="Golang Packagejsongithub.com/bitly/go-simplejson 直接操作json Example package main  import (     &quot;fmt&quot;     &quot;github.com/bitly/go-simplejson&quot; )  func main() {     json, err := simplejson.NewJson([]byte(`{&quot;a">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2019-03-16T06:31:01.657Z">
+<meta property="og:updated_time" content="2019-03-16T05:27:55.349Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="abstract">
-<meta name="twitter:description" content="Data Type">
+<meta name="twitter:title" content="Crazy Snail">
+<meta name="twitter:description" content="Golang Packagejsongithub.com/bitly/go-simplejson 直接操作json Example package main  import (     &quot;fmt&quot;     &quot;github.com/bitly/go-simplejson&quot; )  func main() {     json, err := simplejson.NewJson([]byte(`{&quot;a">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://eleztian.github.io/2019/03/14/abstract/">
+  <link rel="canonical" href="https://eleztian.github.io/2019/03/16/golang-packages/">
 
 
 
 
 
-  <title>abstract | Crazy Snail</title>
+  <title> | Crazy Snail</title>
   
 
 
@@ -273,7 +273,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://eleztian.github.io/2019/03/14/abstract/">
+    <link itemprop="mainEntityOfPage" href="https://eleztian.github.io/2019/03/16/golang-packages/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tab Zhang">
@@ -290,7 +290,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">abstract</h1>
+          <h1 class="post-title" itemprop="name headline"></h1>
         
 
         <div class="post-meta">
@@ -302,8 +302,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-14T21:04:31+08:00">
-                2019-03-14
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-16T13:27:55+08:00">
+                2019-03-16
               </time>
             
 
@@ -321,8 +321,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/03/14/abstract/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/03/14/abstract/" itemprop="commentCount"></span>
+                <a href="/2019/03/16/golang-packages/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/03/16/golang-packages/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -350,110 +350,67 @@
       
 
       
-        <h1 id="Data-Type"><a href="#Data-Type" class="headerlink" title="Data Type"></a>Data Type</h1><!--  –&gt;
-<p><img src="/images/AbstractType.png" alt="常见数据类型"></p>
-<h1 id="时间复杂度-来源-http-www-bigocheatsheet-com"><a href="#时间复杂度-来源-http-www-bigocheatsheet-com" class="headerlink" title="时间复杂度 (来源:http://www.bigocheatsheet.com/)"></a>时间复杂度 (来源:<a href="http://www.bigocheatsheet.com/">http://www.bigocheatsheet.com/</a>)</h1><h2 id="时间复杂度变化"><a href="#时间复杂度变化" class="headerlink" title="时间复杂度变化"></a>时间复杂度变化</h2><!--  –&gt;
-<p><img src="/images/elements.png" alt="时间复杂度梯度变更"></p>
-<table>
-<thead>
-<tr>
-<th>Algorithm</th>
-<th>Recurrence relationship</th>
-<th>Run time</th>
-<th>Comment</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Binary search</td>
-<td>$T(n) = T(n/2) + O(1)$</td>
-<td>$O(\log(n))$</td>
-<td></td>
-</tr>
-<tr>
-<td>Binary tree traversal</td>
-<td>$T(n) = 2T(n/2)+O(1)$</td>
-<td>$O(n)$</td>
-<td></td>
-</tr>
-<tr>
-<td>Optimal sorted matrix</td>
-<td>$T(n) = 2T(n/2)+O(log(n))$</td>
-<td>$O(n)$</td>
-<td></td>
-</tr>
-<tr>
-<td>Merge sort</td>
-<td>$T(n) = 2T(n/2)+O(n)$</td>
-<td>$O(n\log(n))$</td>
-</tr>
-</tbody>
-</table>
-<h2 id="常见数据结构时间复杂度"><a href="#常见数据结构时间复杂度" class="headerlink" title="常见数据结构时间复杂度"></a>常见数据结构时间复杂度</h2><p><img src="/images/data-op-time.png" alt="常见数据结构时间复杂度"></p>
-<h2 id="常见排序算法时间复杂度"><a href="#常见排序算法时间复杂度" class="headerlink" title="常见排序算法时间复杂度"></a>常见排序算法时间复杂度</h2><p><img src="/images/sort.png" alt="常见排序算法时间复杂度"></p>
-<table>
-<thead>
-<tr>
-<th>Algorithm</th>
-<th>Worst time</th>
-<th>Average time</th>
-<th>Stability</th>
-<th>Space</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>冒泡排序</td>
-<td>$O(n^2)$</td>
-<td>$O(n^2)$</td>
-<td>稳定</td>
-<td>$O(1)$</td>
-</tr>
-<tr>
-<td>快速排序</td>
-<td>$O(n^2)$</td>
-<td>$n\log(n)$</td>
-<td>不稳定</td>
-<td>$O(log2n)$~$O(n)$</td>
-</tr>
-<tr>
-<td>选择排序</td>
-<td>$O(n^2)$</td>
-<td>$O(n^2)$</td>
-<td>稳定</td>
-<td>$O(1)$</td>
-</tr>
-<tr>
-<td>二叉树排序</td>
-<td>$O(n2)$</td>
-<td>$O(n\log2n)$</td>
-<td>不稳定</td>
-<td>O(n)</td>
-</tr>
-<tr>
-<td>插入排序</td>
-<td>$O(n^2)$</td>
-<td>$O(n^2)$</td>
-<td>稳定</td>
-<td>$O(1)$</td>
-</tr>
-<tr>
-<td>堆排序</td>
-<td>$O(n\log2n)$</td>
-<td>$O(n\log2n)$</td>
-<td>不稳定</td>
-<td>$O(1)$</td>
-</tr>
-<tr>
-<td>希尔排序</td>
-<td>$O(n^2)$</td>
-<td>O</td>
-<td>不稳定</td>
-<td>O(1)</td>
-</tr>
-</tbody>
-</table>
-<h1 id="other"><a href="#other" class="headerlink" title="other"></a>other</h1>-->
+        <h1 id="Golang-Package"><a href="#Golang-Package" class="headerlink" title="Golang Package"></a>Golang Package</h1><h2 id="json"><a href="#json" class="headerlink" title="json"></a>json</h2><h3 id="github-com-bitly-go-simplejson"><a href="#github-com-bitly-go-simplejson" class="headerlink" title="github.com/bitly/go-simplejson"></a>github.com/bitly/go-simplejson</h3><ul>
+<li>直接操作json</li>
+<li><p>Example</p>
+<pre><code class="go"><span class="keyword">package</span> main
+
+<span class="keyword">import</span> (
+    <span class="string">"fmt"</span>
+    <span class="string">"github.com/bitly/go-simplejson"</span>
+)
+
+<span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> {
+    json, err := simplejson.NewJson([]<span class="keyword">byte</span>(<span class="string">`{"a":123}`</span>), )
+    <span class="keyword">if</span> err != <span class="literal">nil</span> {
+        <span class="built_in">panic</span>(err)
+    }
+    a, err := json.Get(<span class="string">"a"</span>).Int()
+    <span class="keyword">if</span> err != <span class="literal">nil</span> {
+        <span class="built_in">panic</span>(err)
+    }
+    fmt.Println(a) <span class="comment">// out: 123</span>
+    nJson := simplejson.New()
+    nJson.Set(<span class="string">"a"</span>, <span class="number">123</span>)
+
+    nJson.SetPath([]<span class="keyword">string</span>{<span class="string">"a"</span>,<span class="string">"b"</span>,<span class="string">"m"</span>}, <span class="number">456</span>)
+    nJson.SetPath([]<span class="keyword">string</span>{<span class="string">"a"</span>,<span class="string">"b"</span>,<span class="string">"c"</span>,<span class="string">"d"</span>}, <span class="keyword">map</span>[<span class="keyword">string</span>]<span class="keyword">interface</span>{}{<span class="string">"a"</span>:<span class="number">123</span>, <span class="string">"b"</span>:<span class="number">456</span>, <span class="string">"c"</span>:<span class="string">"string"</span>})
+    b, err := nJson.MarshalJSON()
+    <span class="keyword">if</span> err != <span class="literal">nil</span> {
+        <span class="built_in">panic</span>(err)
+    }
+    fmt.Println(<span class="keyword">string</span>(b)) <span class="comment">// out: {"a":{"b":{"c":{"d":{"a":123,"b":456,"c":"string"}},"m":456}}}</span>
+}
+
+</code></pre>
+</li>
+</ul>
+<h2 id="Thirty-platform-SDK"><a href="#Thirty-platform-SDK" class="headerlink" title="Thirty platform SDK"></a>Thirty platform SDK</h2><h3 id="github-com-aws-aws-sdk-go"><a href="#github-com-aws-aws-sdk-go" class="headerlink" title="github.com/aws/aws-sdk-go"></a>github.com/aws/aws-sdk-go</h3><h2 id="Database"><a href="#Database" class="headerlink" title="Database"></a>Database</h2><h3 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h3><ul>
+<li>github.com/garyburd/redigo</li>
+</ul>
+<h3 id="Mysql"><a href="#Mysql" class="headerlink" title="Mysql"></a>Mysql</h3><ul>
+<li>github.com/go-sql-driver/mysql</li>
+</ul>
+<h3 id="MongoDB"><a href="#MongoDB" class="headerlink" title="MongoDB"></a>MongoDB</h3><ul>
+<li>gopkg.in/mgo.v2</li>
+</ul>
+<h2 id="Net"><a href="#Net" class="headerlink" title="Net"></a>Net</h2><h3 id="GRPC"><a href="#GRPC" class="headerlink" title="GRPC"></a>GRPC</h3><ul>
+<li>github.com/golang/protobuf</li>
+</ul>
+<h2 id="mux"><a href="#mux" class="headerlink" title="mux"></a>mux</h2><h3 id="github-com-gorilla-mux"><a href="#github-com-gorilla-mux" class="headerlink" title="github.com/gorilla/mux"></a>github.com/gorilla/mux</h3><h2 id="Log"><a href="#Log" class="headerlink" title="Log"></a>Log</h2><h3 id="github-com-Sirupsen-logrus"><a href="#github-com-Sirupsen-logrus" class="headerlink" title="github.com/Sirupsen/logrus"></a>github.com/Sirupsen/logrus</h3><h2 id="Pool"><a href="#Pool" class="headerlink" title="Pool"></a>Pool</h2><h3 id="Goroutine"><a href="#Goroutine" class="headerlink" title="Goroutine"></a>Goroutine</h3><ul>
+<li>github.com/eleztian/ants</li>
+</ul>
+<h2 id="Test"><a href="#Test" class="headerlink" title="Test"></a>Test</h2><ul>
+<li>github.com/eleztian/assert</li>
+</ul>
+<h2 id="全局ID"><a href="#全局ID" class="headerlink" title="全局ID"></a>全局ID</h2><ul>
+<li>github.com/satori/go.uuid</li>
+</ul>
+<ul>
+<li>gopkg.in/validator.v2</li>
+<li>gopkg.in/yaml.v2</li>
+</ul>
+
       
     </div>
     
@@ -468,12 +425,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/abstract/" rel="tag"># abstract</a>
-          
-        </div>
-      
 
       
       
@@ -483,8 +434,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/13/test/" rel="next" title="test">
-                <i class="fa fa-chevron-left"></i> test
+              <a href="/2019/03/14/abstract/" rel="next" title="abstract">
+                <i class="fa fa-chevron-left"></i> abstract
               </a>
             
           </div>
@@ -493,7 +444,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/03/16/golang-packages/" rel="prev" title>
+              <a href="/2019/03/16/abstract_array/" rel="prev" title>
                  <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -637,7 +588,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Data-Type"><span class="nav-number">1.</span> <span class="nav-text">Data Type</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Golang-Package"><span class="nav-number">1.</span> <span class="nav-text">Golang Package</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#json"><span class="nav-number">1.1.</span> <span class="nav-text">json</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#github-com-bitly-go-simplejson"><span class="nav-number">1.1.1.</span> <span class="nav-text">github.com/bitly/go-simplejson</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Thirty-platform-SDK"><span class="nav-number">1.2.</span> <span class="nav-text">Thirty platform SDK</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#github-com-aws-aws-sdk-go"><span class="nav-number">1.2.1.</span> <span class="nav-text">github.com/aws/aws-sdk-go</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Database"><span class="nav-number">1.3.</span> <span class="nav-text">Database</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Redis"><span class="nav-number">1.3.1.</span> <span class="nav-text">Redis</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Mysql"><span class="nav-number">1.3.2.</span> <span class="nav-text">Mysql</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MongoDB"><span class="nav-number">1.3.3.</span> <span class="nav-text">MongoDB</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Net"><span class="nav-number">1.4.</span> <span class="nav-text">Net</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#GRPC"><span class="nav-number">1.4.1.</span> <span class="nav-text">GRPC</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mux"><span class="nav-number">1.5.</span> <span class="nav-text">mux</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#github-com-gorilla-mux"><span class="nav-number">1.5.1.</span> <span class="nav-text">github.com/gorilla/mux</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Log"><span class="nav-number">1.6.</span> <span class="nav-text">Log</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#github-com-Sirupsen-logrus"><span class="nav-number">1.6.1.</span> <span class="nav-text">github.com/Sirupsen/logrus</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pool"><span class="nav-number">1.7.</span> <span class="nav-text">Pool</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Goroutine"><span class="nav-number">1.7.1.</span> <span class="nav-text">Goroutine</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Test"><span class="nav-number">1.8.</span> <span class="nav-text">Test</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#全局ID"><span class="nav-number">1.9.</span> <span class="nav-text">全局ID</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -800,9 +751,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://eleztian.github.io/2019/03/14/abstract/';
-          this.page.identifier = '2019/03/14/abstract/';
-          this.page.title = 'abstract';
+          this.page.url = 'https://eleztian.github.io/2019/03/16/golang-packages/';
+          this.page.identifier = '2019/03/16/golang-packages/';
+          this.page.title = '';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://eleztian-github-io.disqus.com/embed.js';
