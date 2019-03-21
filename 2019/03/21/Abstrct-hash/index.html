@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="abstract linkedList,">
+  <meta name="keywords" content="hash,">
 
 
 
@@ -79,17 +79,17 @@
 
 
 
-<meta name="keywords" content="abstract linkedList">
+<meta name="keywords" content="hash">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Abstract Linked List">
-<meta property="og:url" content="https://eleztian.github.io/2019/03/17/abstract-linked-list/index.html">
+<meta property="og:title" content="Abstrct hash">
+<meta property="og:url" content="https://eleztian.github.io/2019/03/21/Abstrct-hash/index.html">
 <meta property="og:site_name" content="Crazy Snail">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:image" content="https://eleztian.github.io/2019/03/17/abstract-linked-list/circularlinkedlist.png">
-<meta property="og:updated_time" content="2019-03-21T13:33:53.283Z">
+<meta property="og:image" content="https://eleztian.github.io/2019/03/21/Abstrct-hash/hash.jpg">
+<meta property="og:updated_time" content="2019-03-21T14:45:58.347Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Abstract Linked List">
-<meta name="twitter:image" content="https://eleztian.github.io/2019/03/17/abstract-linked-list/circularlinkedlist.png">
+<meta name="twitter:title" content="Abstrct hash">
+<meta name="twitter:image" content="https://eleztian.github.io/2019/03/21/Abstrct-hash/hash.jpg">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="https://eleztian.github.io/2019/03/17/abstract-linked-list/">
+  <link rel="canonical" href="https://eleztian.github.io/2019/03/21/Abstrct-hash/">
 
 
 
 
 
-  <title>Abstract Linked List | Crazy Snail</title>
+  <title>Abstrct hash | Crazy Snail</title>
   
 
 
@@ -272,7 +272,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://eleztian.github.io/2019/03/17/abstract-linked-list/">
+    <link itemprop="mainEntityOfPage" href="https://eleztian.github.io/2019/03/21/Abstrct-hash/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tab Zhang">
@@ -289,7 +289,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Abstract Linked List</h1>
+          <h1 class="post-title" itemprop="name headline">Abstrct hash</h1>
         
 
         <div class="post-meta">
@@ -301,8 +301,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-17T16:06:20+08:00">
-                2019-03-17
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-21T21:09:14+08:00">
+                2019-03-21
               </time>
             
 
@@ -342,8 +342,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/03/17/abstract-linked-list/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/03/17/abstract-linked-list/" itemprop="commentCount"></span>
+                <a href="/2019/03/21/Abstrct-hash/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/03/21/Abstrct-hash/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -371,39 +371,48 @@
       
 
       
-        <p><img src="/2019/03/17/abstract-linked-list/circularlinkedlist.png" alt="circula rlinked list"><br><a id="more"></a></p>
-<h1 id="Linked-List"><a href="#Linked-List" class="headerlink" title="Linked List"></a>Linked List</h1><h2 id="Leecode-P141-判断链表是否有环"><a href="#Leecode-P141-判断链表是否有环" class="headerlink" title="Leecode P141: 判断链表是否有环"></a><a href="https://leetcode.com/problems/linked-list-cycle/" target="_blank" rel="noopener">Leecode P141</a>: 判断链表是否有环</h2><h3 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h3><pre><code>Given a linked list, determine if it has a cycle in it.
+        <p><img src="/2019/03/21/Abstrct-hash/hash.jpg" alt="hash"><br><a id="more"></a></p>
+<h1 id="Hash"><a href="#Hash" class="headerlink" title="Hash"></a>Hash</h1><h2 id="Leecode-P1-两数之和"><a href="#Leecode-P1-两数之和" class="headerlink" title="Leecode P1: 两数之和"></a><a href="https://leetcode.com/problems/two-sum/comments/" target="_blank" rel="noopener">Leecode P1</a>: 两数之和</h2><h3 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h3><pre><code>给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。
 
-To represent a cycle in the given linked list, we use an integer pos which represents the position (0-indexed) in the linked list where tail connects to. If pos is -1, then there is no cycle in the linked list.
+你可以假设每种输入只会对应一个答案。但是，你不能重复利用这个数组中同样的元素。
 
-Example 1:
-Input: head = [3,2,0,-4], pos = 1
-Output: true
-Explanation: There is a cycle in the linked list, where tail connects to the second node.
+示例:
 
-Example 2:
-Input: head = [1,2], pos = 0
-Output: true
-Explanation: There is a cycle in the linked list, where tail connects to the first node.
+    给定 nums = [2, 7, 11, 15], target = 9
 
-Example 3:
-Input: head = [1], pos = -1
-Output: false
-Explanation: There is no cycle in the linked list.
-</code></pre><h3 id="解题实录"><a href="#解题实录" class="headerlink" title="解题实录"></a>解题实录</h3><ol>
-<li>暴力解题，在规定时间内没有完成遍历则有环</li>
-<li>使用Set存储，在遍历过程中发现有已经遍历的节点则有环</li>
-<li>快慢指针，如果慢指针追上了快指针则有环</li>
+    因为 nums[0] + nums[1] = 2 + 7 = 9
+    所以返回 [0, 1]
+</code></pre><h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><ol>
+<li>暴力求解，双重循环。 时间复杂度 $O(N^2)$</li>
+<li>排序，首位双指针遍历，但是會打亂原始數據。时间复杂度 $O(N)$</li>
+<li>hash。通过在hash中查找target-x的方法。 时间复杂度 $O(N)$</li>
 </ol>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><ol>
-<li><p>思路2</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">hasCycleMap</span><span class="params">(head *ListNode)</span> <span class="title">bool</span></span> &#123;</span><br><span class="line">	m := <span class="built_in">make</span>(<span class="keyword">map</span>[*ListNode]<span class="keyword">bool</span>)</span><br><span class="line">	p := head</span><br><span class="line">	<span class="keyword">for</span> p != <span class="literal">nil</span> &#123;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> _, ok := m[p]; !ok &#123;</span><br><span class="line">			m[p] = <span class="literal">true</span></span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">		&#125;</span><br><span class="line">		p = p.Next</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>思路3</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">hasCycleFL</span><span class="params">(head *ListNode)</span> <span class="title">bool</span></span> &#123;</span><br><span class="line">	slow, fast := head, head</span><br><span class="line">	<span class="keyword">for</span> fast != <span class="literal">nil</span> &amp;&amp; fast.Next != <span class="literal">nil</span> &#123;</span><br><span class="line">		slow = slow.Next</span><br><span class="line">		fast = fast.Next.Next</span><br><span class="line">		<span class="keyword">if</span> slow == fast &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><ul>
+<li>Time: $O(N)$</li>
+<li>Space: $O(N)$</li>
+</ul>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">twoSum</span><span class="params">(nums []<span class="keyword">int</span>, target <span class="keyword">int</span>)</span> []<span class="title">int</span></span> &#123;</span><br><span class="line">	m := <span class="built_in">make</span>(<span class="keyword">map</span>[<span class="keyword">int</span>]<span class="keyword">int</span>)</span><br><span class="line">	<span class="keyword">for</span> i, v := <span class="keyword">range</span> nums &#123;</span><br><span class="line">		<span class="keyword">if</span> r, ok := m[target-v]; ok &amp;&amp; r != i &#123;</span><br><span class="line">			<span class="keyword">return</span> []<span class="keyword">int</span>&#123;r, i&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		m[v] = i</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> []<span class="keyword">int</span>&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Feedback"><a href="#Feedback" class="headerlink" title="Feedback"></a>Feedback</h3><ul>
+<li>HASH 在一般題目中用于快速查詢。</li>
+</ul>
+<h2 id="Leecode-P15-三数之和"><a href="#Leecode-P15-三数之和" class="headerlink" title="Leecode P15: 三数之和"></a><a href="https://leetcode.com/problems/3sum/" target="_blank" rel="noopener">Leecode P15</a>: 三数之和</h2><h3 id="描述-1"><a href="#描述-1" class="headerlink" title="描述"></a>描述</h3><pre><code>给定一个包含 n 个整数的数组 nums，判断 nums 中是否存在三个元素 a，b，c ，使得 a + b + c = 0 ？找出所有满足条件且不重复的三元组。
+
+注意：答案中不可以包含重复的三元组。
+
+例如, 给定数组 nums = [-1, 0, 1, 2, -1, -4]，
+
+    满足要求的三元组集合为：
+    [
+    [-1, 0, 1],
+    [-1, -1, 2]
+    ]
+</code></pre><h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><ol>
+<li>暴力解題 $O(N^3)$</li>
+<li>讲3素和转化为2数和 $z = 0 - (x+y)$ 时间复杂度 $O(N^2)$</li>
 </ol>
-<h3 id="Feedback"><a href="#Feedback" class="headerlink" title="Feedback"></a>Feedback</h3>
+<p>TIP： “答案中不可以包含重复的三元组”  因此排序后采用首尾指针</p>
+<h3 id="代碼"><a href="#代碼" class="headerlink" title="代碼"></a>代碼</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">threeSum</span><span class="params">(nums []<span class="keyword">int</span>)</span> [][]<span class="title">int</span></span> &#123;</span><br><span class="line">    <span class="keyword">var</span> res [][]<span class="keyword">int</span></span><br><span class="line">    sort.Ints(nums)</span><br><span class="line">    <span class="keyword">for</span> i, v := <span class="keyword">range</span> nums &#123;</span><br><span class="line">        <span class="keyword">if</span> i &gt; <span class="number">0</span> &amp;&amp; nums[i<span class="number">-1</span>] == v &#123;</span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> v &gt; <span class="number">0</span> &#123;</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        &#125;</span><br><span class="line">        v = -v</span><br><span class="line">        <span class="keyword">for</span> low, hi := i+<span class="number">1</span>, <span class="built_in">len</span>(nums)<span class="number">-1</span>; low &lt; hi; &#123;</span><br><span class="line">            <span class="keyword">if</span> low &gt; i+<span class="number">1</span> &amp;&amp; nums[low] == nums[low<span class="number">-1</span>] &#123;</span><br><span class="line">                low++</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> nums[low]+nums[hi] &lt; v &#123;</span><br><span class="line">                low++</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> nums[low]+nums[hi] &gt; v &#123;</span><br><span class="line">                hi--</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                res = <span class="built_in">append</span>(res, []<span class="keyword">int</span>&#123;-v, nums[low], nums[hi]&#125;)</span><br><span class="line">                low, hi = low+<span class="number">1</span>, hi<span class="number">-1</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Feedback-1"><a href="#Feedback-1" class="headerlink" title="Feedback"></a>Feedback</h3>
       
     </div>
     
@@ -420,7 +429,7 @@ Explanation: There is no cycle in the linked list.
       
         <div class="post-tags">
           
-            <a href="/tags/abstract-linkedList/" rel="tag"># abstract linkedList</a>
+            <a href="/tags/hash/" rel="tag"># hash</a>
           
         </div>
       
@@ -433,8 +442,8 @@ Explanation: There is no cycle in the linked list.
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/16/A-Bunch-of-Cheatsheets/" rel="next" title="A Bunch of Cheatsheets">
-                <i class="fa fa-chevron-left"></i> A Bunch of Cheatsheets
+              <a href="/2019/03/18/Abstract-Stack-And-Queue/" rel="next" title="Abstract Stack Queue Heap">
+                <i class="fa fa-chevron-left"></i> Abstract Stack Queue Heap
               </a>
             
           </div>
@@ -442,10 +451,6 @@ Explanation: There is no cycle in the linked list.
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/17/ARTS-0/" rel="prev" title="ARTS -0-">
-                ARTS -0- <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -587,7 +592,7 @@ Explanation: There is no cycle in the linked list.
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Linked-List"><span class="nav-number">1.</span> <span class="nav-text">Linked List</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Leecode-P141-判断链表是否有环"><span class="nav-number">1.1.</span> <span class="nav-text">Leecode P141: 判断链表是否有环</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#描述"><span class="nav-number">1.1.1.</span> <span class="nav-text">描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解题实录"><span class="nav-number">1.1.2.</span> <span class="nav-text">解题实录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码"><span class="nav-number">1.1.3.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Feedback"><span class="nav-number">1.1.4.</span> <span class="nav-text">Feedback</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Hash"><span class="nav-number">1.</span> <span class="nav-text">Hash</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Leecode-P1-两数之和"><span class="nav-number">1.1.</span> <span class="nav-text">Leecode P1: 两数之和</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#描述"><span class="nav-number">1.1.1.</span> <span class="nav-text">描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#思路"><span class="nav-number">1.1.2.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码"><span class="nav-number">1.1.3.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Feedback"><span class="nav-number">1.1.4.</span> <span class="nav-text">Feedback</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Leecode-P15-三数之和"><span class="nav-number">1.2.</span> <span class="nav-text">Leecode P15: 三数之和</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#描述-1"><span class="nav-number">1.2.1.</span> <span class="nav-text">描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#思路-1"><span class="nav-number">1.2.2.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代碼"><span class="nav-number">1.2.3.</span> <span class="nav-text">代碼</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Feedback-1"><span class="nav-number">1.2.4.</span> <span class="nav-text">Feedback</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -750,9 +755,9 @@ Explanation: There is no cycle in the linked list.
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://eleztian.github.io/2019/03/17/abstract-linked-list/';
-          this.page.identifier = '2019/03/17/abstract-linked-list/';
-          this.page.title = 'Abstract Linked List';
+          this.page.url = 'https://eleztian.github.io/2019/03/21/Abstrct-hash/';
+          this.page.identifier = '2019/03/21/Abstrct-hash/';
+          this.page.title = 'Abstrct hash';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://eleztian-github-io.disqus.com/embed.js';
