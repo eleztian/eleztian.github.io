@@ -88,7 +88,7 @@
 <meta property="og:description" content="ARTS Content     Algorithm Stack、Heap、Queue   Review 如何使用好超时控制?   Tip/Techni hystrix-go   Share 熔断器理解实现">
 <meta property="og:locale" content="zh-cn">
 <meta property="og:image" content="https://engineering.grab.com/img/context-deadlines-and-how-to-set-them/image3.jpg">
-<meta property="og:updated_time" content="2019-03-24T07:50:09.075Z">
+<meta property="og:updated_time" content="2019-03-24T07:54:40.014Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ARTS -0-">
 <meta name="twitter:description" content="ARTS Content     Algorithm Stack、Heap、Queue   Review 如何使用好超时控制?   Tip/Techni hystrix-go   Share 熔断器理解实现">
@@ -398,9 +398,6 @@
 <td>Share</td>
 <td>熔断器理解实现</td>
 </tr>
-<tr>
-<td></td>
-</tr>
 </tbody>
 </table>
 <a id="more"></a>
@@ -433,7 +430,7 @@
 <p>如何设置一个合理的超时时间：<br><img src="https://engineering.grab.com/img/context-deadlines-and-how-to-set-them/image3.jpg" alt="timeout"><br>如图，一个不合理的超时时间会导致计算资源泄露，由于从B到A的调用超时，A（或A的客户端）可能会重试，导致B上的负载增加。这反过来导致C上的负载增加，最终所有服务都将停止响应。这就是常见的级联故障。<br>一个合格的超时时间应该根据服务提供方所提供的SLA(service-level agreements)来设定。</p>
 <h2 id="Tip-Techni"><a href="#Tip-Techni" class="headerlink" title="Tip/Techni"></a>Tip/Techni</h2><p>一个优秀的熔断器实现(go)： <a href="https://github.com/afex/hystrix-go" target="_blank" rel="noopener">hystrix-go</a></p>
 <p>hystrix-go旨在帮助Gopher轻松构建一个具有基于Java的Hystrix库的类似执行语义的应用程序。</p>
-<h2 id="Share"><a href="#Share" class="headerlink" title="Share"></a>Share</h2><p><a href="http://eleztian.top/2019/03/18/Circuit-Breakers/" target="_blank" rel="noopener">Circuit Breakers</a></p>
+<h2 id="Share"><a href="#Share" class="headerlink" title="Share"></a>Share</h2><p><a href="/2019/03/24/Circuit-Breakers/">Circuit Breakers</a></p>
 
       
     </div>
