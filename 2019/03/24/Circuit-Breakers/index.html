@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-cn">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="CircuitBreakers,">
+
+
+
+
+
+
+
+
+
+
+<meta name="keywords" content="CircuitBreakers">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Circuit Breakers">
+<meta property="og:url" content="https://eleztian.github.io/2019/03/24/Circuit-Breakers/index.html">
+<meta property="og:site_name" content="Crazy Snail">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:image" content="https://eleztian.github.io/2019/03/24/Circuit-Breakers/status.png">
+<meta property="og:image" content="https://eleztian.github.io/2019/03/24/Circuit-Breakers/status.png">
+<meta property="og:updated_time" content="2019-03-24T07:49:22.067Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Circuit Breakers">
+<meta name="twitter:image" content="https://eleztian.github.io/2019/03/24/Circuit-Breakers/status.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://eleztian.github.io/2019/03/24/Circuit-Breakers/">
+
+
+
+
+
+  <title>Circuit Breakers | Crazy Snail</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?02354f4a0947eb6d8a7342e40b0aa71b";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-cn">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Crazy Snail</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Tab.Zhang's Blog</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://eleztian.github.io/2019/03/24/Circuit-Breakers/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tab Zhang">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Crazy Snail">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Circuit Breakers</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-24T14:13:36+08:00">
+                2019-03-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Microservice/" itemprop="url" rel="index">
+                    <span itemprop="name">Microservice</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/03/24/Circuit-Breakers/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/03/24/Circuit-Breakers/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="/2019/03/24/Circuit-Breakers/status.png" alt="Status Tranlate"><br><a id="more"></a></p>
+<h1 id="Circuit-Breakers-断路器"><a href="#Circuit-Breakers-断路器" class="headerlink" title="Circuit Breakers [断路器]"></a>Circuit Breakers [断路器]</h1><h2 id="Circuit-Breaker-是什么"><a href="#Circuit-Breaker-是什么" class="headerlink" title="Circuit Breaker 是什么"></a>Circuit Breaker 是什么</h2><p>Circuit Breaker 的概念来源于电子工程(电流达到一定阙值时断开电路)，其目的是当下游服务因压力过大而响应变慢或者出错，上游服务为了保护系统整体的可用性暂时切断对下游服务的访问。</p>
+<h2 id="Circuit-Breaker-的作用"><a href="#Circuit-Breaker-的作用" class="headerlink" title="Circuit Breaker 的作用"></a>Circuit Breaker 的作用</h2><p><strong>牺牲局部保护整体</strong></p>
+<p>如下有一个请求链：<br>ServiceA -&gt; ServiceB -&gt; ServiceC</p>
+<p>如果ServiceC达到瓶颈获取故障。这时ServiceB就会有大量的请求超时而导致ServiceB阻塞大量的请求线程导致ServiceB变慢或不可用，同理进而对其上游服务产生同样的影响，最后整个系统完全瘫痪。</p>
+<p>如果在ServiceC服务变慢或故障时，ServiceB切断对ServiceC的调用那么久不会出现上述的情景。这就是熔断器的作用。</p>
+<h2 id="Circuit-Breaker-原理"><a href="#Circuit-Breaker-原理" class="headerlink" title="Circuit Breaker 原理"></a>Circuit Breaker 原理</h2><p>Circuit Breaker 的原理是维护一个状态机，总共有3个状态：</p>
+<ul>
+<li>Closed 关闭状态，服务可以正常使用，当请求在一定时间内失败数量达到一定的阙值则表示服务不可用，将状态切换到Open状态。</li>
+<li>Open 打开状态，来自应用的请求会立即返回失败。在熔断一定时间后切换到HalfOpen状态检查服务是否恢复。</li>
+<li>HalfOpen 半打开状态， 仅仅允许少量的服务请求通过，如果这些请求调用都成功，表示服务已经恢复，则将其切换到Closed状态，反之如果存在服务调用有一个失败则将其切换到Open状态。</li>
+</ul>
+<p>状态转换如下图所示：（<a href="https://docs.microsoft.com/en-us/previous-versions/msp-n-p/dn589784(v%3dpandp.10" target="_blank" rel="noopener">图片来源</a>)）<br><img src="/2019/03/24/Circuit-Breakers/status.png" alt="Status Tranlate"></p>
+<h2 id="Circuit-Breaker-的golang实现"><a href="#Circuit-Breaker-的golang实现" class="headerlink" title="Circuit Breaker 的golang实现"></a>Circuit Breaker 的golang实现</h2><p>在go生态里有3个较好的实现Packages:</p>
+<ul>
+<li>github.com/sony/gobreaker</li>
+<li>github.com/afex/hystrix-go</li>
+<li>github.com/streadway/handy</li>
+</ul>
+<p>下面阅读一下比较简洁的gobreaker代码</p>
+<h3 id="结构定义"><a href="#结构定义" class="headerlink" title="结构定义"></a>结构定义</h3><figure class="highlight golang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// CircuitBreaker 是一个状态机用于防止发送极可能失败的请求。</span></span><br><span class="line"><span class="keyword">type</span> CircuitBreaker <span class="keyword">struct</span> &#123;</span><br><span class="line">    <span class="comment">// 熔断器名字</span></span><br><span class="line">	name          <span class="keyword">string</span></span><br><span class="line">    <span class="comment">// HalfOpen状态下允许的最大请求数量</span></span><br><span class="line">	maxRequests   <span class="keyword">uint32</span></span><br><span class="line">    <span class="comment">// Close状态下定期清除counts计数器的循环周期</span></span><br><span class="line">	interval      time.Duration</span><br><span class="line">    <span class="comment">// timeout 是状态从Open切换到HalfOpen状态的周期时间。 默认60s</span></span><br><span class="line">	timeout       time.Duration</span><br><span class="line">    <span class="comment">// 请求失败时调用，返回True切换到Open状态，默认为失败数量超过5个则切换到Open.</span></span><br><span class="line">	readyToTrip   <span class="function"><span class="keyword">func</span><span class="params">(counts Counts)</span> <span class="title">bool</span></span></span><br><span class="line"><span class="function">    // 状态变化时调用</span></span><br><span class="line"><span class="function">	<span class="title">onStateChange</span> <span class="title">func</span><span class="params">(name <span class="keyword">string</span>, from State, to State)</span></span></span><br><span class="line"><span class="function">    // 状态并发控制锁</span></span><br><span class="line"><span class="function">	<span class="title">mutex</span>      <span class="title">sync</span>.<span class="title">Mutex</span></span></span><br><span class="line"><span class="function">    // 状态</span></span><br><span class="line"><span class="function">	<span class="title">state</span>      <span class="title">State</span></span></span><br><span class="line"><span class="function">    // <span class="title">generation</span> 状态变化一次加1，<span class="title">interval</span>周期性加1<span class="params">(清空计数器)</span>， 如果请求前后的<span class="title">generation</span>不同则表示该请求无效。</span></span><br><span class="line"><span class="function">	<span class="title">generation</span> <span class="title">uint64</span></span></span><br><span class="line"><span class="function">    // 各种计数器</span></span><br><span class="line"><span class="function">	<span class="title">counts</span>     <span class="title">Counts</span></span></span><br><span class="line"><span class="function">    // 记录时间点，不同状态下游不同含义。<span class="title">Closed</span>: 下一次刷新<span class="title">counts</span>的时间点； <span class="title">open</span>: 下一次切换到<span class="title">HalfOpen</span>状态的时间点。</span></span><br><span class="line"><span class="function">	<span class="title">expiry</span>     <span class="title">time</span>.<span class="title">Time</span></span></span><br><span class="line"><span class="function">&#125;</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">// 计数器</span></span><br><span class="line"><span class="function"><span class="title">type</span> <span class="title">Counts</span> <span class="title">struct</span></span> &#123;</span><br><span class="line">    <span class="comment">// 请求数</span></span><br><span class="line">    Requests             <span class="keyword">uint32</span></span><br><span class="line">    <span class="comment">// 成功次数</span></span><br><span class="line">    TotalSuccesses       <span class="keyword">uint32</span></span><br><span class="line">    <span class="comment">// 失败次数</span></span><br><span class="line">    TotalFailures        <span class="keyword">uint32</span></span><br><span class="line">    <span class="comment">// 连续成功数</span></span><br><span class="line">    ConsecutiveSuccesses <span class="keyword">uint32</span></span><br><span class="line">    <span class="comment">// 连续失败数</span></span><br><span class="line">	ConsecutiveFailures  <span class="keyword">uint32</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h3><figure class="highlight golang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(cb *CircuitBreaker)</span> <span class="title">Execute</span><span class="params">(req <span class="keyword">func</span>()</span> <span class="params">(<span class="keyword">interface</span>&#123;&#125;, error)</span>) <span class="params">(<span class="keyword">interface</span>&#123;&#125;, error)</span></span> &#123;</span><br><span class="line">    <span class="comment">// 检查是状态，是否可以通过请求，如果可以生成一个generation id, 否则返回错误信息</span></span><br><span class="line">	generation, err := cb.beforeRequest()</span><br><span class="line">	<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">nil</span>, err</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="comment">// 如果在执行请求时发生错误，则认为请求失败，记录相应的信息到状态机</span></span><br><span class="line">	<span class="keyword">defer</span> <span class="function"><span class="keyword">func</span><span class="params">()</span></span> &#123;</span><br><span class="line">		e := <span class="built_in">recover</span>()</span><br><span class="line">		<span class="keyword">if</span> e != <span class="literal">nil</span> &#123;</span><br><span class="line">			cb.afterRequest(generation, <span class="literal">false</span>)</span><br><span class="line">			<span class="built_in">panic</span>(e)</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;()</span><br><span class="line">    <span class="comment">// 执行请求</span></span><br><span class="line">    result, err := req()</span><br><span class="line">    <span class="comment">// 记录请求相应的状态的状态机</span></span><br><span class="line">    cb.afterRequest(generation, err == <span class="literal">nil</span>)</span><br><span class="line">    <span class="comment">// 返回结果和错误信息</span></span><br><span class="line">	<span class="keyword">return</span> result, err</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 请求前处理</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(cb *CircuitBreaker)</span> <span class="title">beforeRequest</span><span class="params">()</span> <span class="params">(<span class="keyword">uint64</span>, error)</span></span> &#123;</span><br><span class="line">	cb.mutex.Lock()</span><br><span class="line">	<span class="keyword">defer</span> cb.mutex.Unlock()</span><br><span class="line"></span><br><span class="line">	now := time.Now()</span><br><span class="line">	<span class="comment">// 生成generation</span></span><br><span class="line">	state, generation := cb.currentState(now)</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 检查状态，判断是否可以接受新的请求</span></span><br><span class="line">	<span class="keyword">if</span> state == StateOpen &#123;</span><br><span class="line">        <span class="keyword">return</span> generation, ErrOpenState</span><br><span class="line">        <span class="comment">// HalfOpen状态只允许一定数量(maxRequests)的请求通过</span></span><br><span class="line">	&#125; <span class="keyword">else</span> <span class="keyword">if</span> state == StateHalfOpen &amp;&amp; cb.counts.Requests &gt;= cb.maxRequests &#123;</span><br><span class="line">		<span class="keyword">return</span> generation, ErrTooManyRequests</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">// 如果可以接受新的请求，请求数加1</span></span><br><span class="line">	cb.counts.onRequest()</span><br><span class="line">	<span class="keyword">return</span> generation, <span class="literal">nil</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(cb *CircuitBreaker)</span> <span class="title">afterRequest</span><span class="params">(before <span class="keyword">uint64</span>, success <span class="keyword">bool</span>)</span></span> &#123;</span><br><span class="line">	cb.mutex.Lock()</span><br><span class="line">	<span class="keyword">defer</span> cb.mutex.Unlock()</span><br><span class="line"></span><br><span class="line">	now := time.Now()</span><br><span class="line">	<span class="comment">// 获取状态和generation</span></span><br><span class="line">	state, generation := cb.currentState(now)</span><br><span class="line">	<span class="keyword">if</span> generation != before &#123;</span><br><span class="line">		<span class="keyword">return</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">// 更新计数器，</span></span><br><span class="line">	<span class="comment">// 如果是hafOpen则要切换状态，如果连续maxRequests个请求都成功切换到Closed状态， 如果这次失败切换到Open状态</span></span><br><span class="line">	<span class="keyword">if</span> success &#123;</span><br><span class="line">		cb.onSuccess(state, now)</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		cb.onFailure(state, now)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ul>
+<li><a href="https://docs.microsoft.com/en-us/previous-versions/msp-n-p/dn589784(v%3dpandp.10" target="_blank" rel="noopener">Microsoft Circuit Breaker Pattern</a>)</li>
+<li></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CircuitBreakers/" rel="tag"># CircuitBreakers</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/03/21/Abstrct-hash/" rel="next" title="Abstrct hash">
+                <i class="fa fa-chevron-left"></i> Abstrct hash
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Tab Zhang</p>
+              <p class="site-description motion-element" itemprop="description">机会总是留给有准备的人</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Circuit-Breakers-断路器"><span class="nav-number">1.</span> <span class="nav-text">Circuit Breakers [断路器]</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Circuit-Breaker-是什么"><span class="nav-number">1.1.</span> <span class="nav-text">Circuit Breaker 是什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Circuit-Breaker-的作用"><span class="nav-number">1.2.</span> <span class="nav-text">Circuit Breaker 的作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Circuit-Breaker-原理"><span class="nav-number">1.3.</span> <span class="nav-text">Circuit Breaker 原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Circuit-Breaker-的golang实现"><span class="nav-number">1.4.</span> <span class="nav-text">Circuit Breaker 的golang实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#结构定义"><span class="nav-number">1.4.1.</span> <span class="nav-text">结构定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#核心代码"><span class="nav-number">1.4.2.</span> <span class="nav-text">核心代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考文献"><span class="nav-number">1.5.</span> <span class="nav-text">参考文献</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Tab Zhang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://eleztian-github-io.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://eleztian.github.io/2019/03/24/Circuit-Breakers/';
+          this.page.identifier = '2019/03/24/Circuit-Breakers/';
+          this.page.title = 'Circuit Breakers';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://eleztian-github-io.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src>
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+  
+
+
+  
+
+  
+
+</body>
+</html>
