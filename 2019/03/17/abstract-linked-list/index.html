@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="abstract,">
+  <meta name="keywords" content="abstract linkedList,">
 
 
 
@@ -79,21 +79,17 @@
 
 
 
-<meta name="keywords" content="abstract">
+<meta name="keywords" content="abstract linkedList">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Abstract">
-<meta property="og:url" content="https://eleztian.github.io/2019/03/14/AbstractC/abstract/index.html">
+<meta property="og:title" content="Abstract Linked List">
+<meta property="og:url" content="https://eleztian.github.io/2019/03/17/abstract-linked-list/index.html">
 <meta property="og:site_name" content="Crazy Snail">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:image" content="https://eleztian.github.io/2019/03/14/AbstractC/abstract/elements.png">
-<meta property="og:image" content="https://eleztian.github.io/2019/03/14/AbstractC/abstract/AbstractType.png">
-<meta property="og:image" content="https://eleztian.github.io/2019/03/14/AbstractC/abstract/elements.png">
-<meta property="og:image" content="https://eleztian.github.io/2019/03/14/AbstractC/abstract/data-op-time.png">
-<meta property="og:image" content="https://eleztian.github.io/2019/03/14/AbstractC/abstract/sort.png">
-<meta property="og:updated_time" content="2019-03-31T02:57:05.755Z">
+<meta property="og:image" content="https://eleztian.github.io/2019/03/17/abstract-linked-list/circularlinkedlist.png">
+<meta property="og:updated_time" content="2019-03-31T03:03:49.757Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Abstract">
-<meta name="twitter:image" content="https://eleztian.github.io/2019/03/14/AbstractC/abstract/elements.png">
+<meta name="twitter:title" content="Abstract Linked List">
+<meta name="twitter:image" content="https://eleztian.github.io/2019/03/17/abstract-linked-list/circularlinkedlist.png">
 
 
 
@@ -123,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="https://eleztian.github.io/2019/03/14/AbstractC/abstract/">
+  <link rel="canonical" href="https://eleztian.github.io/2019/03/17/abstract-linked-list/">
 
 
 
 
 
-  <title>Abstract | Crazy Snail</title>
+  <title>Abstract Linked List | Crazy Snail</title>
   
 
 
@@ -276,7 +272,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://eleztian.github.io/2019/03/14/AbstractC/abstract/">
+    <link itemprop="mainEntityOfPage" href="https://eleztian.github.io/2019/03/17/abstract-linked-list/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tab Zhang">
@@ -293,7 +289,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Abstract</h1>
+          <h1 class="post-title" itemprop="name headline">Abstract Linked List</h1>
         
 
         <div class="post-meta">
@@ -305,8 +301,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-14T21:04:31+08:00">
-                2019-03-14
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-17T16:06:20+08:00">
+                2019-03-17
               </time>
             
 
@@ -316,6 +312,28 @@
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/abstract/" itemprop="url" rel="index">
+                    <span itemprop="name">abstract</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -324,8 +342,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/03/14/AbstractC/abstract/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/03/14/AbstractC/abstract/" itemprop="commentCount"></span>
+                <a href="/2019/03/17/abstract-linked-list/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/03/17/abstract-linked-list/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -353,15 +371,39 @@
       
 
       
-        <p><img src="/2019/03/14/AbstractC/abstract/elements.png" alt="时间复杂度梯度变更"><br><a id="more"></a></p>
-<h1 id="Data-Type"><a href="#Data-Type" class="headerlink" title="Data Type"></a>Data Type</h1><p><img src="/2019/03/14/AbstractC/abstract/AbstractType.png" alt="常见数据类型"></p>
-<h1 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h1><blockquote>
-<p>图片来源: <a href="http://www.bigocheatsheet.com/" target="_blank" rel="noopener">http://www.bigocheatsheet.com/</a></p>
-</blockquote>
-<h2 id="时间复杂度变化"><a href="#时间复杂度变化" class="headerlink" title="时间复杂度变化"></a>时间复杂度变化</h2><p><img src="/2019/03/14/AbstractC/abstract/elements.png" alt="时间复杂度梯度变更"></p>
-<h2 id="常见数据结构时间复杂度"><a href="#常见数据结构时间复杂度" class="headerlink" title="常见数据结构时间复杂度"></a>常见数据结构时间复杂度</h2><p><img src="/2019/03/14/AbstractC/abstract/data-op-time.png" alt="常见数据结构时间复杂度"></p>
-<h2 id="常见排序算法时间复杂度"><a href="#常见排序算法时间复杂度" class="headerlink" title="常见排序算法时间复杂度"></a>常见排序算法时间复杂度</h2><p><img src="/2019/03/14/AbstractC/abstract/sort.png" alt="常见排序算法时间复杂度"></p>
+        <p><img src="/2019/03/17/abstract-linked-list/circularlinkedlist.png" alt="circula rlinked list"><br><a id="more"></a></p>
+<h1 id="Linked-List"><a href="#Linked-List" class="headerlink" title="Linked List"></a>Linked List</h1><h2 id="Leecode-P141-判断链表是否有环"><a href="#Leecode-P141-判断链表是否有环" class="headerlink" title="Leecode P141: 判断链表是否有环"></a><a href="https://leetcode.com/problems/linked-list-cycle/" target="_blank" rel="noopener">Leecode P141</a>: 判断链表是否有环</h2><h3 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h3><pre><code>Given a linked list, determine if it has a cycle in it.
 
+To represent a cycle in the given linked list, we use an integer pos which represents the position (0-indexed) in the linked list where tail connects to. If pos is -1, then there is no cycle in the linked list.
+
+Example 1:
+Input: head = [3,2,0,-4], pos = 1
+Output: true
+Explanation: There is a cycle in the linked list, where tail connects to the second node.
+
+Example 2:
+Input: head = [1,2], pos = 0
+Output: true
+Explanation: There is a cycle in the linked list, where tail connects to the first node.
+
+Example 3:
+Input: head = [1], pos = -1
+Output: false
+Explanation: There is no cycle in the linked list.
+</code></pre><h3 id="解题实录"><a href="#解题实录" class="headerlink" title="解题实录"></a>解题实录</h3><ol>
+<li>暴力解题，在规定时间内没有完成遍历则有环</li>
+<li>使用Set存储，在遍历过程中发现有已经遍历的节点则有环</li>
+<li>快慢指针，如果慢指针追上了快指针则有环</li>
+</ol>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><ol>
+<li><p>思路2</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">hasCycleMap</span><span class="params">(head *ListNode)</span> <span class="title">bool</span></span> &#123;</span><br><span class="line">	m := <span class="built_in">make</span>(<span class="keyword">map</span>[*ListNode]<span class="keyword">bool</span>)</span><br><span class="line">	p := head</span><br><span class="line">	<span class="keyword">for</span> p != <span class="literal">nil</span> &#123;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> _, ok := m[p]; !ok &#123;</span><br><span class="line">			m[p] = <span class="literal">true</span></span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">		&#125;</span><br><span class="line">		p = p.Next</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>思路3</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">hasCycleFL</span><span class="params">(head *ListNode)</span> <span class="title">bool</span></span> &#123;</span><br><span class="line">	slow, fast := head, head</span><br><span class="line">	<span class="keyword">for</span> fast != <span class="literal">nil</span> &amp;&amp; fast.Next != <span class="literal">nil</span> &#123;</span><br><span class="line">		slow = slow.Next</span><br><span class="line">		fast = fast.Next.Next</span><br><span class="line">		<span class="keyword">if</span> slow == fast &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="Feedback"><a href="#Feedback" class="headerlink" title="Feedback"></a>Feedback</h3>
       
     </div>
     
@@ -378,7 +420,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/abstract/" rel="tag"># abstract</a>
+            <a href="/tags/abstract-linkedList/" rel="tag"># abstract linkedList</a>
           
         </div>
       
@@ -391,14 +433,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/03/16/A-Bunch-of-Cheatsheets/" rel="next" title="A Bunch of Cheatsheets">
+                <i class="fa fa-chevron-left"></i> A Bunch of Cheatsheets
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/03/16/golang-packages/" rel="prev" title="Golang Packages">
-                Golang Packages <i class="fa fa-chevron-right"></i>
+              <a href="/2019/03/17/ARTS-0/" rel="prev" title="ARTS -0-">
+                ARTS -0- <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -541,7 +587,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Data-Type"><span class="nav-number">1.</span> <span class="nav-text">Data Type</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#时间复杂度"><span class="nav-number">2.</span> <span class="nav-text">时间复杂度</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#时间复杂度变化"><span class="nav-number">2.1.</span> <span class="nav-text">时间复杂度变化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常见数据结构时间复杂度"><span class="nav-number">2.2.</span> <span class="nav-text">常见数据结构时间复杂度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常见排序算法时间复杂度"><span class="nav-number">2.3.</span> <span class="nav-text">常见排序算法时间复杂度</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Linked-List"><span class="nav-number">1.</span> <span class="nav-text">Linked List</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Leecode-P141-判断链表是否有环"><span class="nav-number">1.1.</span> <span class="nav-text">Leecode P141: 判断链表是否有环</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#描述"><span class="nav-number">1.1.1.</span> <span class="nav-text">描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解题实录"><span class="nav-number">1.1.2.</span> <span class="nav-text">解题实录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码"><span class="nav-number">1.1.3.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Feedback"><span class="nav-number">1.1.4.</span> <span class="nav-text">Feedback</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -704,9 +750,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://eleztian.github.io/2019/03/14/AbstractC/abstract/';
-          this.page.identifier = '2019/03/14/AbstractC/abstract/';
-          this.page.title = 'Abstract';
+          this.page.url = 'https://eleztian.github.io/2019/03/17/abstract-linked-list/';
+          this.page.identifier = '2019/03/17/abstract-linked-list/';
+          this.page.title = 'Abstract Linked List';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://eleztian-github-io.disqus.com/embed.js';
