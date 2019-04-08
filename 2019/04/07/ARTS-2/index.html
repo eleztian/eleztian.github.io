@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="abstract linkedList,">
+  <meta name="keywords" content="ARTS,">
 
 
 
@@ -79,17 +79,18 @@
 
 
 
-<meta name="keywords" content="abstract linkedList">
+<meta name="description" content="ARTS Content     Algorithm    Review    Tip/Techni    Share">
+<meta name="keywords" content="ARTS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Abstract Linked List">
-<meta property="og:url" content="https://eleztian.github.io/2019/03/17/abstract-linked-list/index.html">
+<meta property="og:title" content="ARTS Week 2">
+<meta property="og:url" content="https://eleztian.github.io/2019/04/07/ARTS-2/index.html">
 <meta property="og:site_name" content="Crazy Snail">
+<meta property="og:description" content="ARTS Content     Algorithm    Review    Tip/Techni    Share">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:image" content="https://eleztian.github.io/2019/03/17/abstract-linked-list/circularlinkedlist.png">
-<meta property="og:updated_time" content="2019-03-31T03:03:49.757Z">
+<meta property="og:updated_time" content="2019-04-07T07:13:29.305Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Abstract Linked List">
-<meta name="twitter:image" content="https://eleztian.github.io/2019/03/17/abstract-linked-list/circularlinkedlist.png">
+<meta name="twitter:title" content="ARTS Week 2">
+<meta name="twitter:description" content="ARTS Content     Algorithm    Review    Tip/Techni    Share">
 
 
 
@@ -119,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://eleztian.github.io/2019/03/17/abstract-linked-list/">
+  <link rel="canonical" href="https://eleztian.github.io/2019/04/07/ARTS-2/">
 
 
 
 
 
-  <title>Abstract Linked List | Crazy Snail</title>
+  <title>ARTS Week 2 | Crazy Snail</title>
   
 
 
@@ -272,7 +273,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://eleztian.github.io/2019/03/17/abstract-linked-list/">
+    <link itemprop="mainEntityOfPage" href="https://eleztian.github.io/2019/04/07/ARTS-2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tab Zhang">
@@ -289,7 +290,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Abstract Linked List</h1>
+          <h1 class="post-title" itemprop="name headline">ARTS Week 2</h1>
         
 
         <div class="post-meta">
@@ -301,8 +302,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-17T16:06:20+08:00">
-                2019-03-17
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-07T15:08:54+08:00">
+                2019-04-07
               </time>
             
 
@@ -324,8 +325,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/abstract/" itemprop="url" rel="index">
-                    <span itemprop="name">abstract</span>
+                  <a href="/categories/ARTS/" itemprop="url" rel="index">
+                    <span itemprop="name">ARTS</span>
                   </a>
                 </span>
 
@@ -342,8 +343,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/03/17/abstract-linked-list/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/03/17/abstract-linked-list/" itemprop="commentCount"></span>
+                <a href="/2019/04/07/ARTS-2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/04/07/ARTS-2/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -371,39 +372,45 @@
       
 
       
-        <p><img src="/2019/03/17/abstract-linked-list/circularlinkedlist.png" alt="circula rlinked list"><br><a id="more"></a></p>
-<h1 id="Linked-List"><a href="#Linked-List" class="headerlink" title="Linked List"></a>Linked List</h1><h2 id="Leecode-P141-判断链表是否有环"><a href="#Leecode-P141-判断链表是否有环" class="headerlink" title="Leecode P141: 判断链表是否有环"></a><a href="https://leetcode.com/problems/linked-list-cycle/" target="_blank" rel="noopener">Leecode P141</a>: 判断链表是否有环</h2><h3 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h3><pre><code>Given a linked list, determine if it has a cycle in it.
-
-To represent a cycle in the given linked list, we use an integer pos which represents the position (0-indexed) in the linked list where tail connects to. If pos is -1, then there is no cycle in the linked list.
-
-Example 1:
-Input: head = [3,2,0,-4], pos = 1
-Output: true
-Explanation: There is a cycle in the linked list, where tail connects to the second node.
-
-Example 2:
-Input: head = [1,2], pos = 0
-Output: true
-Explanation: There is a cycle in the linked list, where tail connects to the first node.
-
-Example 3:
-Input: head = [1], pos = -1
-Output: false
-Explanation: There is no cycle in the linked list.
-</code></pre><h3 id="解题实录"><a href="#解题实录" class="headerlink" title="解题实录"></a>解题实录</h3><ol>
-<li>暴力解题，在规定时间内没有完成遍历则有环</li>
-<li>使用Set存储，在遍历过程中发现有已经遍历的节点则有环</li>
-<li>快慢指针，如果慢指针追上了快指针则有环</li>
-</ol>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><ol>
-<li><p>思路2</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">hasCycleMap</span><span class="params">(head *ListNode)</span> <span class="title">bool</span></span> &#123;</span><br><span class="line">	m := <span class="built_in">make</span>(<span class="keyword">map</span>[*ListNode]<span class="keyword">bool</span>)</span><br><span class="line">	p := head</span><br><span class="line">	<span class="keyword">for</span> p != <span class="literal">nil</span> &#123;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> _, ok := m[p]; !ok &#123;</span><br><span class="line">			m[p] = <span class="literal">true</span></span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">		&#125;</span><br><span class="line">		p = p.Next</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>思路3</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">hasCycleFL</span><span class="params">(head *ListNode)</span> <span class="title">bool</span></span> &#123;</span><br><span class="line">	slow, fast := head, head</span><br><span class="line">	<span class="keyword">for</span> fast != <span class="literal">nil</span> &amp;&amp; fast.Next != <span class="literal">nil</span> &#123;</span><br><span class="line">		slow = slow.Next</span><br><span class="line">		fast = fast.Next.Next</span><br><span class="line">		<span class="keyword">if</span> slow == fast &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h3 id="Feedback"><a href="#Feedback" class="headerlink" title="Feedback"></a>Feedback</h3>
+        <table>
+<thead>
+<tr>
+<th>ARTS</th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Algorithm</td>
+<td></td>
+</tr>
+<tr>
+<td>Review</td>
+<td></td>
+</tr>
+<tr>
+<td>Tip/Techni</td>
+<td></td>
+</tr>
+<tr>
+<td>Share</td>
+</tr>
+</tbody>
+</table>
+<a id="more"></a>
+<blockquote>
+<p>ARTS是什么？</p>
+<ul>
+<li>Algorithm：每周至少做一个leetcode的算法题；</li>
+<li>Review：阅读并点评至少一篇英文技术文章；</li>
+<li>Tip/Techni：学习至少一个技术技巧；</li>
+</ul>
+</blockquote>
+<ul>
+<li>Share：分享一篇有观点和思考的技术文章;</li>
+</ul>
+<hr>
+<h2 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm"></a>Algorithm</h2><h2 id="Review"><a href="#Review" class="headerlink" title="Review"></a>Review</h2><h2 id="Tip-Techni"><a href="#Tip-Techni" class="headerlink" title="Tip/Techni"></a>Tip/Techni</h2><h2 id="Share"><a href="#Share" class="headerlink" title="Share"></a>Share</h2>
       
     </div>
     
@@ -420,7 +427,7 @@ Explanation: There is no cycle in the linked list.
       
         <div class="post-tags">
           
-            <a href="/tags/abstract-linkedList/" rel="tag"># abstract linkedList</a>
+            <a href="/tags/ARTS/" rel="tag"># ARTS</a>
           
         </div>
       
@@ -433,8 +440,8 @@ Explanation: There is no cycle in the linked list.
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/16/A-Bunch-of-Cheatsheets/" rel="next" title="A Bunch of Cheatsheets">
-                <i class="fa fa-chevron-left"></i> A Bunch of Cheatsheets
+              <a href="/2019/03/31/Exponential-Backoff/" rel="next" title="Exponential Backoff">
+                <i class="fa fa-chevron-left"></i> Exponential Backoff
               </a>
             
           </div>
@@ -443,8 +450,8 @@ Explanation: There is no cycle in the linked list.
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/03/17/ARTS-0/" rel="prev" title="ARTS -0-">
-                ARTS -0- <i class="fa fa-chevron-right"></i>
+              <a href="/2019/04/07/Timer-Ticker/" rel="prev" title="Timer && Ticker">
+                Timer && Ticker <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -587,7 +594,7 @@ Explanation: There is no cycle in the linked list.
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Linked-List"><span class="nav-number">1.</span> <span class="nav-text">Linked List</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Leecode-P141-判断链表是否有环"><span class="nav-number">1.1.</span> <span class="nav-text">Leecode P141: 判断链表是否有环</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#描述"><span class="nav-number">1.1.1.</span> <span class="nav-text">描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解题实录"><span class="nav-number">1.1.2.</span> <span class="nav-text">解题实录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码"><span class="nav-number">1.1.3.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Feedback"><span class="nav-number">1.1.4.</span> <span class="nav-text">Feedback</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Algorithm"><span class="nav-number">1.</span> <span class="nav-text">Algorithm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Review"><span class="nav-number">2.</span> <span class="nav-text">Review</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tip-Techni"><span class="nav-number">3.</span> <span class="nav-text">Tip/Techni</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Share"><span class="nav-number">4.</span> <span class="nav-text">Share</span></a></li></ol></div>
             
 
           </div>
@@ -750,9 +757,9 @@ Explanation: There is no cycle in the linked list.
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://eleztian.github.io/2019/03/17/abstract-linked-list/';
-          this.page.identifier = '2019/03/17/abstract-linked-list/';
-          this.page.title = 'Abstract Linked List';
+          this.page.url = 'https://eleztian.github.io/2019/04/07/ARTS-2/';
+          this.page.identifier = '2019/04/07/ARTS-2/';
+          this.page.title = 'ARTS Week 2';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://eleztian-github-io.disqus.com/embed.js';
